@@ -1,6 +1,6 @@
 import '../../index';
 import React, { useState, useEffect } from 'react';
-import { showMessage } from '../../Features/ui';
+import { showMessage } from '../../Features/ui/buttonBlackorWhite';
 
 function ButtonDarkorWhite() {
     const [isDark, setIsDark] = useState(false);

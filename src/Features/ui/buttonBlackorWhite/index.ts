@@ -10,10 +10,11 @@ function showMessage() {
     popup.style.transform = 'translateX(-50%)';
     popup.style.padding = '10px';
     popup.style.backgroundColor = document.body.classList.contains('dark') ? 'black' : 'white';
-    popup.style.border = '1px solid black';
+    popup.style.border = '1px solid ' + (document.body.classList.contains('dark') ? 'white' : 'black');
     popup.style.borderRadius = '25px';
     popup.style.zIndex = '1000';
-    popup.style.color = document.body.classList.contains('dark') ? 'white' : 'black';
+    popup.style.color = 'rgb(30, 136, 229)';
+    popup.style.fontWeight = 'bold';
     popup.textContent = mensagem;
 
     document.body.appendChild(popup);
