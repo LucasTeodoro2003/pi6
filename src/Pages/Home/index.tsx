@@ -2,7 +2,7 @@ import Header from "../../Widgets/header";
 
 function HomePage() {
     return (
-        <main><Header></Header></main>
+        <main className=""><Header></Header></main>
     );
   }
 
