@@ -1,0 +1,30 @@
+import '../../index';
+import React, { useState, useEffect } from 'react';
+import { showMessage } from '../../Features/ui';
+
+function ButtonDarkorWhite() {
+    const [isDark, setIsDark] = useState(false);
+
+    const toggleDarkMode = () => {
+        document.body.classList.toggle('dark');
+        setIsDark(!isDark);
+    };
+
+    return (
+        <button
+            onClick={() => {
+                toggleDarkMode();
+                showMessage();
+            }}
+            className="bg-white dark:bg-black rounded-full w-12 h-12 fixed bottom-4 right-4 z-50 border-2 border-black flex items-center justify-center"
+        >
+            <img
+                src={isDark ? "lua.png" : "sol.png"}
+                alt={isDark ? "Lua" : "Sol"}
+                className={`w-6 h-6 ${isDark ? 'filter invert' : ''}`}
+            />
+        </button>
+    );
+}
+
+export default ButtonDarkorWhite;
