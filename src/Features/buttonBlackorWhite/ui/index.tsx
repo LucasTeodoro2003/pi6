@@ -27,4 +27,4 @@ function ButtonDarkorWhite() {
     );
 }
 
-export default ButtonDarkorWhite;
+export {ButtonDarkorWhite};

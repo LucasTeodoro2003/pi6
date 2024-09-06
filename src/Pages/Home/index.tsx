@@ -1,5 +1,5 @@
-import ButtonDarkorWhite from "../../Features/buttonBlackorWhite";
-import Header from "../../Widgets/ui/header";
+import { ButtonDarkorWhite } from "../../Features/index";
+import { Header } from "../../Widgets/index";
 
 
 function HomePage() {
@@ -13,4 +13,4 @@ function HomePage() {
 
 
 
-  export default HomePage;
+  export {HomePage};
