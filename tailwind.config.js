@@ -6,5 +6,5 @@ module.exports = {
   },
   darkMode: 'selector',
   plugins: [],
+  extends: ["@feature-sliced"]
 }
-
