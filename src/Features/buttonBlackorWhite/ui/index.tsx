@@ -1,13 +1,13 @@
-import '../../index';
+import '../../../index';
 import React, { useState, useEffect } from 'react';
-import { showMessage } from '../../Features/ui/buttonBlackorWhite';
+import { showMessage } from '../lib';
 
 function ButtonDarkorWhite() {
     const [isDark, setIsDark] = useState(false);
 
     const toggleDarkMode = () => {
         document.body.classList.toggle('dark');
-        setIsDark(!isDark);
+        setIsDark(document.body.classList.contains(`dark`));
     };
 
     return (

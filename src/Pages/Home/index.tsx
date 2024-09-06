@@ -1,4 +1,4 @@
-import ButtonDarkorWhite from "../../Shared/ui";
+import ButtonDarkorWhite from "../../Features/buttonBlackorWhite";
 import Header from "../../Widgets/ui/header";
 
 
