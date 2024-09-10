@@ -1,5 +1,5 @@
 import { ButtonDarkorWhite } from "../../Features/index";
-import { Header } from "../../Widgets/index";
+import { Header, MultiLevelSidebar } from "../../Widgets/index";
 
 
 function HomePage() {
@@ -7,6 +7,7 @@ function HomePage() {
         <main className="">
             <Header />
             <ButtonDarkorWhite />
+            <MultiLevelSidebar/>
         </main>
     );
 }
