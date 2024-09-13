@@ -16,7 +16,7 @@ function ButtonDarkorWhite() {
                 toggleDarkMode();
                 showMessage();
             }}
-            className="bg-white dark:bg-black rounded-full w-12 h-12 fixed bottom-4 right-4 z-50 border-2 border-black flex items-center justify-center"
+            className="bg-white dark:bg-gray-800 rounded-full w-12 h-12 fixed bottom-4 right-4 z-50 border-2 border-gray-900 flex items-center justify-center"
         >
             <img
                 src={isDark ? "lua.png" : "sol.png"}

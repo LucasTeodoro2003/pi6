@@ -9,11 +9,11 @@ function showMessage() {
     popup.style.left = '91%';
     popup.style.transform = 'translateX(-50%)';
     popup.style.padding = '10px';
-    popup.style.backgroundColor = document.body.classList.contains('dark') ? 'black' : 'white';
-    popup.style.border = '1px solid ' + (document.body.classList.contains('dark') ? 'white' : 'black');
+    popup.style.backgroundColor = document.body.classList.contains('dark') ? '#1f2937' : 'white';
+    popup.style.border = '1px solid ' + (document.body.classList.contains('dark') ? '#111827' : 'black');
     popup.style.borderRadius = '25px';
     popup.style.zIndex = '1000';
-    popup.style.color = document.body.classList.contains('dark') ? 'white' : 'text-gray-800';
+    popup.style.color = document.body.classList.contains('dark') ? 'white' : '#1f2937';
     popup.style.fontWeight = 'bold';
     popup.textContent = mensagem;
 
