@@ -1,11 +1,12 @@
 import { ButtonDarkorWhite } from "../../Features/index";
-import { Header } from "../../Widgets/index";
-import { Teste } from "../../Widgets/ui/SideBar";
+import { Example, Form, Header } from "../../Widgets/index";
 
 function HomePage() {
   return (
     <main className="">
       <Header />
+      <Example/>
+      <Form/>
       <ButtonDarkorWhite />
     </main>
   );
