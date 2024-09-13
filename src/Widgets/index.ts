@@ -1,5 +1,5 @@
 import {Header} from "./ui/header";
-import Example from "./ui/SideBar";
+import Sidebar from "./ui/SideBar";
 import Form from "./ui/formBase";
 
-export {Header, Example, Form};
+export {Header, Form, Sidebar};
