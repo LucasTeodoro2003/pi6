@@ -13,7 +13,7 @@ function showMessage() {
     popup.style.border = '1px solid ' + (document.body.classList.contains('dark') ? 'white' : 'black');
     popup.style.borderRadius = '25px';
     popup.style.zIndex = '1000';
-    popup.style.color = 'rgb(30, 136, 229)';
+    popup.style.color = document.body.classList.contains('dark') ? 'white' : 'text-gray-800';
     popup.style.fontWeight = 'bold';
     popup.textContent = mensagem;
 

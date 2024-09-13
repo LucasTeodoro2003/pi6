@@ -2,10 +2,14 @@ import '../../../index';
 import { useState } from 'react';
 import { AlertSimple } from '../../../shared';
 import { CameraIcon } from '@heroicons/react/20/solid';
+import { ArrowLeftStartOnRectangleIcon } from '@heroicons/react/24/outline';
+
+interface ReceiveName{
+    name: string;
+}
 
 
-
-export default function Header() {
+const Header: React.FC<ReceiveName> = ({name}) => {
 const [show, setShow]=useState(false)
 
     return (
@@ -15,17 +19,17 @@ const [show, setShow]=useState(false)
                 {/* <img src="https://s5.static.brasilescola.uol.com.br/be/2023/09/escudo-do-cruzeiro.jpg" alt="Escudo Cruzeiro" className='w-12 h-12 border-2 border-blue-600 dark:border-white rounded-full shadow-lg object-cover mr-4 ml-20 mb-8' />
                 <h2 className='text-blue-600 font-bold mb-8'>Cruzeiro</h2> */}
                 {/* <div className='flex-grow flex justify-center mb-8 ml-'>MEIO FINAL</div> */}
-                <div className='flex justify-end space-x-10 mb-8 mr-11 w-screen text-gray-800 font-bold'>
-                    <div>Meio</div>
+                <div className='flex justify-end space-x-10 mb-8 mr-11 w-screen text-gray-800 dark:text-white font-medium'>
+                    {/* <div>Meio</div>
                     <div>Quase no meio</div>
                     <div>Menos a Direita</div>
-                    <div>A direita</div>
-                    <div>Totalmente a Direita</div>
+                    <div>A direita</div> */}
+                    <div>Bem Vindo, {name}</div>
                     <div className='ml-10'>|</div>
                     <button onClick={() => {
                 setShow(true)
-            }}><CameraIcon title="Camera" className='w-8 h-8 dark:text-white'  /></button>
-                    <button><img src="sair.png" alt="Sair" className='w-7 h-6 mt-1 dark:filter dark:invert' /></button>
+            }}><CameraIcon title="Camera" className='w-8 h-8 text-gray-800 dark:text-white'  /></button>
+                    <button><ArrowLeftStartOnRectangleIcon title="sair.png" className='w-7 h-7  text-gray-800 dark:text-white' /></button>
                 </div>
             </div>
         </div>
@@ -34,3 +38,5 @@ const [show, setShow]=useState(false)
         </>
     )
 }
+
+export {Header};

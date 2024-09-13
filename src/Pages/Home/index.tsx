@@ -4,7 +4,7 @@ import { Example, Form, Header } from "../../Widgets/index";
 function HomePage() {
   return (
     <main className="">
-      <Header />
+      <Header name="Lucas"/>
       <Example/>
       <Form/>
       <ButtonDarkorWhite />
