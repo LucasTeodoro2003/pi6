@@ -31,12 +31,6 @@ const AlertSimple: React.FC<AtiveAlert> = ({show, setShow}) => {
                 <div className="flex items-center">
                   <div className="flex w-0 flex-1 justify-between">
                     <p className="w-0 flex-1 text-sm font-medium text-gray-900">Iniciando LIVE-CAM</p>
-                    <button onClick={() => setShow(false)}
-                      type="button"
-                      className="ml-3 flex-shrink-0 rounded-md bg-white text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                    >
-                      Cancelar
-                    </button>
                   </div>
                   <div className="ml-4 flex flex-shrink-0">
                     <button

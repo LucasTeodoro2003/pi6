@@ -5,7 +5,7 @@ function HomePage() {
   return (
     <main className="">
       <Header name="Lucas"/>
-      <Background/>
+      <Background VideosId=""/>
       <Sidebar/>
       <ButtonDarkorWhite />
     </main>
