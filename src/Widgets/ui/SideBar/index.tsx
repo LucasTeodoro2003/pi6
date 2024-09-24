@@ -42,7 +42,7 @@ export default function Sidebar() {
                     href={item.href}
                     className={classNames(
                       item.current ? 'bg-gray-100 dark:bg-gray-300 text-gray-600 dark:text-gray-600' : 'text-gray-600 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-600 hover:text-gray-900 dark:hover:text-white/80',
-                      'group flex items-center px-2 py-2 text-sm font-medium rounded-md'
+                      'group flex items-center px-2 py-2 text-sm font-Jakarta font-bold rounded-md'
                     )}
                   >
                     <item.icon
