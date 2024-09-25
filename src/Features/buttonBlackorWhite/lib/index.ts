@@ -21,7 +21,7 @@ function showMessage() {
 
     setTimeout(() => {
         document.body.removeChild(popup);
-    }, 250);
+    }, 100);
 }
 
 export { showMessage };

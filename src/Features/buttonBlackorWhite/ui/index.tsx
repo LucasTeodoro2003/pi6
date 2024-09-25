@@ -1,5 +1,5 @@
 import '../../../index';
-import React, { useState, useEffect } from 'react';
+import React, { useState, } from 'react';
 import { showMessage } from '../lib';
 
 function ButtonDarkorWhite() {

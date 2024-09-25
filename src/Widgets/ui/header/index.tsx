@@ -1,19 +1,14 @@
 import '../../../index';
-import { useState } from 'react';
-import { AlertSimple } from '../../../shared';
 import { CameraIcon } from '@heroicons/react/20/solid';
 import { ArrowLeftStartOnRectangleIcon } from '@heroicons/react/24/outline';
-import { Background } from '../backGround';
 
 interface ReceiveName {
     name: string;
-    idVideo: string;
+    onCameraClick: () => void;
 }
 
 
-const Header: React.FC<ReceiveName> = ({ name, idVideo }) => {
-    const [show, setShow] = useState(false);
-    const [videosId, setVideosId] = useState('');
+const Header: React.FC<ReceiveName> = ({ name, onCameraClick }) => {
 
     return (
         <>
@@ -22,20 +17,13 @@ const Header: React.FC<ReceiveName> = ({ name, idVideo }) => {
                     <div className='flex justify-end space-x-10 mb-8 mr-11 w-screen text-gray-800 dark:text-white font-Jakarta font-medium'>
                         <div className='font-Jakarta font-extrabold'>Bem-vindo, {name}</div>
                         <div className='ml-10'>|</div>
-                        <button onClick={() => {
-                            setShow(true);
-                            setVideosId(idVideo);
-                        }}><CameraIcon title="Câmera" className='w-8 h-8 text-gray-800 dark:text-white' /></button>
-                        <button><ArrowLeftStartOnRectangleIcon title="sair.png" className='w-7 h-7 text-gray-800 dark:text-white' /></button>
+                        <button onClick={onCameraClick}><CameraIcon title="Câmera" className='w-8 h-8 text-gray-800 dark:text-white' /></button>
+                        <button><ArrowLeftStartOnRectangleIcon title="sair.png" className='w-7 h-7 ' /></button>
                     </div>
                 </div>
             </div>
 
-            <AlertSimple 
-                show={show} 
-                setShow={setShow} 
-            />
-            <Background VideosId={videosId} />
+            
         </>
     )
 }
