@@ -12,11 +12,11 @@ function classNames(...classes: string[]) {
 }
 
 interface IniciarTabs {
-    show: boolean;
-    setShow: (_: boolean) => void;
-  }
+  show: boolean;
+  setShow: (_: boolean) => void;
+}
 
-const Tabs: React.FC<IniciarTabs> = ({ show, setShow}) => {
+const Tabs: React.FC<IniciarTabs> = ({ show, setShow }) => {
   return (
     <div>
       <div className="sm:hidden">

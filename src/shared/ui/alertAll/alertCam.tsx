@@ -1,14 +1,13 @@
-import { Fragment } from 'react'
-import { Transition } from '@headlessui/react'
-import { XMarkIcon } from '@heroicons/react/20/solid'
+import { Transition } from "@headlessui/react";
+import { XMarkIcon } from "@heroicons/react/20/solid";
+import { Fragment } from "react";
 
 interface AtiveAlert {
-    show: boolean;
-    setShow: (_: boolean) => void;
-  }
+  show: boolean;
+  setShow: (_: boolean) => void;
+}
 
-const AlertSimple: React.FC<AtiveAlert> = ({show, setShow}) => {
-
+const AlertSimple: React.FC<AtiveAlert> = ({ show, setShow }) => {
   return (
     <>
       <div
@@ -30,17 +29,23 @@ const AlertSimple: React.FC<AtiveAlert> = ({show, setShow}) => {
               <div className="p-4">
                 <div className="flex items-center">
                   <div className="flex w-0 flex-1 justify-between">
-                    <p className="w-0 flex-1 text-sm font-medium text-gray-900">Iniciando LIVE-CAM</p>
+                    <p className="w-0 flex-1 text-sm font-medium text-gray-900">
+                      Iniciando LIVE-CAM
+                    </p>
                   </div>
                   <div className="ml-4 flex flex-shrink-0">
                     <button
                       type="button"
                       className="inline-flex rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                       onClick={() => {
-                        setShow(false)
+                        setShow(false);
                       }}
                     >
-                      <XMarkIcon className="h-5 w-5" title='Closed' aria-hidden="true" />
+                      <XMarkIcon
+                        className="h-5 w-5"
+                        title="Closed"
+                        aria-hidden="true"
+                      />
                     </button>
                   </div>
                 </div>
@@ -50,7 +55,7 @@ const AlertSimple: React.FC<AtiveAlert> = ({show, setShow}) => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export {AlertSimple};
+export { AlertSimple };

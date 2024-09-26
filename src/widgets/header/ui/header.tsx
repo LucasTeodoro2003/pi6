@@ -1,4 +1,3 @@
-import '../../../index';
 import { CameraIcon } from '@heroicons/react/20/solid';
 import { ArrowLeftStartOnRectangleIcon } from '@heroicons/react/24/outline';
 
