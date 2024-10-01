@@ -5,9 +5,14 @@ import { Tabs } from "./tabs";
 
 interface InicarCamera {
   VideosId: string;
+  tabs: Array<{ name: string; href: string; current: boolean }>;
+  alterIDVideos: (href: string, index: number) => void;
+  activeTab: number;
 }
 
-const Background: React.FC<InicarCamera> = ({ VideosId }) => {
+
+
+const Background: React.FC<InicarCamera> = ({ VideosId, tabs, alterIDVideos, activeTab}) => {
   return (
     <div className="flex h-screen ml-64">
       <div className="bg-white dark:bg-gray-800 w-full h-full ">
@@ -15,7 +20,7 @@ const Background: React.FC<InicarCamera> = ({ VideosId }) => {
           <div className="flex text-justify w-screen">
             {VideosId ? (
               <div>
-                <Tabs show={true} setShow={() => {}}></Tabs>
+                <Tabs show={true} setShow={() => {}} tabs={tabs} alterIDVideos={alterIDVideos} activeTab={activeTab} />
                 <ReactPlayer url={VideosId} playing={false} pip={true} />
               </div>
             ) : (
