@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
+import { api } from "../../App";
+import { Person } from "../../Entities/employee";
 import { ButtonDarkorWhite } from "../../Features/buttonBlackorWhite";
 import { AlertSimple } from "../../shared/ui";
 import { BackgroundHome, Sidebar } from "../../widgets";
@@ -11,79 +13,15 @@ function HomePage() {
   const [activeTab, setActiveTab] = useState(0);
   const [params, setParams] = useSearchParams();
 
-  const people = useMemo(
-    () => [
-      {
-        name: "John Doe",
-        title: "Developer",
-        department: "Engineering",
-        email: "john.doe@example.com",
-        image: "https://via.placeholder.com/150",
-        usingEpi: true,
-      },
-      {
-        name: "Jane Smith",
-        title: "Designer",
-        department: "UI/UX",
-        email: "jane.smith@example.com",
-        image: "https://via.placeholder.com/150",
-        usingEpi: false,
-      },
-      {
-        name: "Michael Johnson",
-        title: "Manager",
-        department: "Operations",
-        email: "michael.johnson@example.com",
-        image: "https://via.placeholder.com/150",
-        usingEpi: true,
-      },
-      {
-        name: "Michael Johnson",
-        title: "Manager",
-        department: "Operations",
-        email: "michael.johnson@example.com",
-        image: "https://via.placeholder.com/150",
-        usingEpi: true,
-      },
-      {
-        name: "Michael Johnson",
-        title: "Manager",
-        department: "Operations",
-        email: "michael.johnson@example.com",
-        image: "https://via.placeholder.com/150",
-        usingEpi: true,
-      },
-      {
-        name: "Michael Johnson",
-        title: "Manager",
-        department: "Operations",
-        email: "michael.johnson@example.com",
-        image: "https://via.placeholder.com/150",
-        usingEpi: true,
-      },
-      {
-        name: "Michael Johnson",
-        title: "Manager",
-        department: "Operations",
-        email: "michael.johnson@example.com",
-        image: "https://via.placeholder.com/150",
-        usingEpi: true,
-      },
-      {
-        name: "Michael Johnson",
-        title: "Manager",
-        department: "Operations",
-        email: "michael.johnson@example.com",
-        image: "https://via.placeholder.com/150",
-        usingEpi: true,
-      },
-    ],
-    []
-  );
-
+  const [people, setPeople] = useState<Person[]>([]);
   useEffect(() => {
-    fetch("");
-  });
+    api
+      .get("/PersonController/GetPersons")
+      .then((response) => setPeople(response.data))
+      .catch((err) => {
+        console.error("Aconteceu um erro: " + err);
+      });
+  }, []);
 
   const tabs = useMemo(
     () => [
@@ -129,6 +67,7 @@ function HomePage() {
 
   return (
     <main>
+      <div></div>
       <Header
         name="Lucas"
         onCameraClick={() => {

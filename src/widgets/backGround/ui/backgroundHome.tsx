@@ -1,6 +1,7 @@
 import { FaceSmileIcon } from "@heroicons/react/24/outline";
 import React from "react";
 import ReactPlayer from "react-player";
+import { Person } from "../../../Entities/employee";
 import { Table } from "./table";
 import { Tabs } from "./tabs";
 interface BackgroundHomeProps {
@@ -8,10 +9,16 @@ interface BackgroundHomeProps {
   tabs: Array<{ name: string; href: string; current: boolean }>;
   alterIDVideos: (href: string, index: number) => void;
   activeTab: number;
-  people: Array<{ name: string; title: string; department: string; email: string; image: string; usingEpi: boolean }>;
+  people: Person[];
 }
 
-const BackgroundHome: React.FC<BackgroundHomeProps> = ({ VideosId, tabs, alterIDVideos, activeTab, people}) => {
+const BackgroundHome: React.FC<BackgroundHomeProps> = ({
+  VideosId,
+  tabs,
+  alterIDVideos,
+  activeTab,
+  people,
+}) => {
   return (
     <div className="flex h-screen ml-64">
       <div className="bg-white dark:bg-gray-800 w-full h-full">
@@ -20,8 +27,15 @@ const BackgroundHome: React.FC<BackgroundHomeProps> = ({ VideosId, tabs, alterID
             {VideosId ? (
               <div className="flex">
                 <div className="flex flex-col">
-                  <h2 className="text-lg font-Jakarta font-semibold mb-4 text-center dark:text-white">Câmeras Disponíveis</h2>
-                  <Tabs setShow={() => {}} tabs={tabs} alterIDVideos={alterIDVideos} activeTab={activeTab} />
+                  <h2 className="text-lg font-Jakarta font-semibold mb-4 text-center dark:text-white">
+                    Câmeras Disponíveis
+                  </h2>
+                  <Tabs
+                    setShow={() => {}}
+                    tabs={tabs}
+                    alterIDVideos={alterIDVideos}
+                    activeTab={activeTab}
+                  />
                   <ReactPlayer url={VideosId} playing={false} pip={true} />
                 </div>
                 <Table people={people} />
