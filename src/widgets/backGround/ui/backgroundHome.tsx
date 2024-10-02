@@ -12,7 +12,7 @@ interface InicarCamera {
 
 
 
-const Background: React.FC<InicarCamera> = ({ VideosId, tabs, alterIDVideos, activeTab}) => {
+const BackgroundHome: React.FC<InicarCamera> = ({ VideosId, tabs, alterIDVideos, activeTab}) => {
   return (
     <div className="flex h-screen ml-64">
       <div className="bg-white dark:bg-gray-800 w-full h-full ">
@@ -36,4 +36,4 @@ const Background: React.FC<InicarCamera> = ({ VideosId, tabs, alterIDVideos, act
   );
 };
 
-export { Background };
+export { BackgroundHome };
