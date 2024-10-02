@@ -1,7 +1,6 @@
 import {
   BellAlertIcon,
   CalendarIcon,
-  ChartBarIcon,
   Cog8ToothIcon,
   FolderIcon,
   HomeIcon,

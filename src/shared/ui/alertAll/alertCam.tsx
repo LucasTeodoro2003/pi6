@@ -25,25 +25,25 @@ const AlertSimple: React.FC<AtiveAlert> = ({ show, setShow }) => {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="pointer-events-auto w-full max-w-sm overflow-hidden rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
+            <div className="pointer-events-auto w-full max-w-sm overflow-hidden rounded-lg bg-white dark:bg-gray-800 shadow-lg dark:ring-1 dark:ring-black dark:ring-opacity-5">
               <div className="p-4">
                 <div className="flex items-center">
                   <div className="flex w-0 flex-1 justify-between">
-                    <p className="w-0 flex-1 text-sm font-medium text-gray-900">
+                    <p className="w-0 flex-1 text-sm font-medium text-gray-900 dark:text-gray-200">
                       Iniciando LIVE-CAM
                     </p>
                   </div>
                   <div className="ml-4 flex flex-shrink-0">
                     <button
                       type="button"
-                      className="inline-flex rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                      className="inline-flex rounded-md bg-white dark:bg-gray-800 text-gray-400 dark:text-gray-500 hover:text-gray-500 dark:hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                       onClick={() => {
                         setShow(false);
                       }}
                     >
                       <XMarkIcon
                         className="h-5 w-5"
-                        title="Closed"
+                        title="Fechar"
                         aria-hidden="true"
                       />
                     </button>

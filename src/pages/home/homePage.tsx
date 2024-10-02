@@ -12,6 +12,17 @@ function HomePage() {
   const [activeTab, setActiveTab] = useState(0);
   const [params, setParams] = useSearchParams();
 
+  const people = useMemo(() => [
+    { name: "John Doe", title: "Developer", department: "Engineering", email: "john.doe@example.com", image: "https://via.placeholder.com/150", usingEpi: true },
+    { name: "Jane Smith", title: "Designer", department: "UI/UX", email: "jane.smith@example.com", image: "https://via.placeholder.com/150", usingEpi: false },
+    { name: "Michael Johnson", title: "Manager", department: "Operations", email: "michael.johnson@example.com", image: "https://via.placeholder.com/150", usingEpi: true },
+    { name: "Michael Johnson", title: "Manager", department: "Operations", email: "michael.johnson@example.com", image: "https://via.placeholder.com/150", usingEpi: true },
+    { name: "Michael Johnson", title: "Manager", department: "Operations", email: "michael.johnson@example.com", image: "https://via.placeholder.com/150", usingEpi: true },
+    { name: "Michael Johnson", title: "Manager", department: "Operations", email: "michael.johnson@example.com", image: "https://via.placeholder.com/150", usingEpi: true },
+    { name: "Michael Johnson", title: "Manager", department: "Operations", email: "michael.johnson@example.com", image: "https://via.placeholder.com/150", usingEpi: true },
+    { name: "Michael Johnson", title: "Manager", department: "Operations", email: "michael.johnson@example.com", image: "https://via.placeholder.com/150", usingEpi: true }
+  ], []);
+
   useEffect(() => {
     fetch("");
   });
@@ -68,6 +79,7 @@ function HomePage() {
         }}
       />
       <BackgroundHome
+        people={people}
         VideosId={videosId}
         tabs={tabs}
         alterIDVideos={alterVideoId}
