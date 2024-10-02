@@ -18,9 +18,9 @@ interface NavigationItem {
 const navigation: NavigationItem[] = [
   { name: 'Home', link: '/', icon: HomeIcon },
   { name: 'Alertas', link: '/alertas', icon: BellAlertIcon },
-  { name: 'Projects', link: '/', icon: FolderIcon },
-  { name: 'Calendar', link: '/', icon: CalendarIcon },
-  { name: 'Documents', link: '/', icon: InboxIcon },
+  { name: 'Projects', link: '/projetos', icon: FolderIcon },
+  { name: 'Calendar', link: '/calendario', icon: CalendarIcon },
+  { name: 'Documents', link: '/documentos', icon: InboxIcon },
   { name: 'Configurações', link: '/config', icon: Cog8ToothIcon },
 ];
 

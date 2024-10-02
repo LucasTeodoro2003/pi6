@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router";
 import { ButtonDarkorWhite } from "../../Features/buttonBlackorWhite";
-import { BackgroundAlert } from "../../widgets/backGround";
+import { BackgroundConfig } from "../../widgets/backGround";
 import { Header } from "../../widgets/header/ui/header";
 import Sidebar from "../../widgets/SideBar/ui/sidebar";
 
@@ -20,7 +20,7 @@ function ConfigPage() {
         }}
       />
       <Sidebar />
-      <BackgroundAlert />
+      <BackgroundConfig />
       <ButtonDarkorWhite />
     </main>
   );
