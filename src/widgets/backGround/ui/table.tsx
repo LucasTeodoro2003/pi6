@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+
+
 
 interface Person {
   name: string;
@@ -14,6 +17,9 @@ interface TableProps {
 }
 
 const Table: React.FC<TableProps> = ({ people }) => {
+const navigate = useNavigate();
+
+
   return (
     <div className="px-4 sm:px-6 lg:px-8">
       <div className="sm:flex sm:items-center">
@@ -21,7 +27,7 @@ const Table: React.FC<TableProps> = ({ people }) => {
           <h1 className="font-Jakarta text-xl font-semibold text-gray-800 dark:text-white">Funcionários</h1>
         </div>
         <div className="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
-          <button
+          <button onClick={() => navigate('/formulary')}
             className="inline-flex items-center justify-center rounded-md border border-transparent px-4 py-2 text-sm font-semibold bg-primary  text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto font-Jakarta"
           >
             Adicionar Funcionário
