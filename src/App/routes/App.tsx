@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { HomePage } from "../../pages";
+import { ConfigPage, HomePage } from "../../pages";
 import { AlertPage } from "../../pages/alertas/alertPage";
 
 function App() {
@@ -8,6 +8,7 @@ function App() {
     <Routes>
       <Route path='/' element={<HomePage/>}/>
       <Route path='/alertas' element={<AlertPage/>}/>
+      <Route path='/Config' element={<ConfigPage />}/>
     </Routes>
     </BrowserRouter>
   )
