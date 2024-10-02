@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router";
 import { ButtonDarkorWhite } from "../../Features/buttonBlackorWhite";
-import { BackgroundConfig, BackgroundFormulary, Header, Sidebar } from "../../widgets";
+import { BackgroundFormulary, Header, Sidebar } from "../../widgets";
 
 function FormularyPage() {
   useEffect(() => {
