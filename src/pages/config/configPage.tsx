@@ -1,9 +1,8 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router";
 import { ButtonDarkorWhite } from "../../Features/buttonBlackorWhite";
-import { BackgroundConfig } from "../../widgets/backGround";
+import { BackgroundConfig, Sidebar } from "../../widgets";
 import { Header } from "../../widgets/header/ui/header";
-import Sidebar from "../../widgets/SideBar/ui/sidebar";
 
 function ConfigPage() {
   useEffect(() => {

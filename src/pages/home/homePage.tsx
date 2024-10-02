@@ -2,9 +2,8 @@ import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { ButtonDarkorWhite } from "../../Features/buttonBlackorWhite";
 import { AlertSimple } from "../../shared/ui/alertAll";
-import { BackgroundHome } from "../../widgets/backGround";
+import { BackgroundHome, Sidebar } from "../../widgets";
 import { Header } from "../../widgets/header/ui/header";
-import Sidebar from "../../widgets/SideBar/ui/sidebar";
 
 function HomePage() {
   const [videosId, setVideosId] = useState("");

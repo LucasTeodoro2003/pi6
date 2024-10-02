@@ -2,8 +2,8 @@ import {
   BellAlertIcon,
   CalendarIcon,
   Cog8ToothIcon,
-  FolderIcon,
   HomeIcon,
+  IdentificationIcon,
   InboxIcon,
 } from '@heroicons/react/24/outline';
 import { Link, useLocation } from 'react-router-dom';
@@ -17,9 +17,9 @@ interface NavigationItem {
 const navigation: NavigationItem[] = [
   { name: 'Home', link: '/', icon: HomeIcon },
   { name: 'Alertas', link: '/alertas', icon: BellAlertIcon },
-  { name: 'Projects', link: '/projetos', icon: FolderIcon },
-  { name: 'Calendar', link: '/calendario', icon: CalendarIcon },
-  { name: 'Documents', link: '/documentos', icon: InboxIcon },
+  { name: 'Funcionários', link: '/formulary', icon: IdentificationIcon },
+  { name: 'Calendar', link: '#', icon: CalendarIcon },
+  { name: 'Documents', link: '#', icon: InboxIcon },
   { name: 'Configurações', link: '/config', icon: Cog8ToothIcon },
 ];
 
@@ -27,7 +27,7 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
 }
 
-export default function Sidebar() {
+function Sidebar() {
   const location = useLocation();
 
   return (
@@ -41,7 +41,7 @@ export default function Sidebar() {
               alt="PI"
             />
           </div>
-          <nav className="mt-5 flex-1 space-y-1 bg-white dark:bg-gray-800 px-2">
+          <nav className="mt-5 space-y-1 bg-white dark:bg-gray-800 px-2">
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -66,8 +66,13 @@ export default function Sidebar() {
               </Link>
             ))}
           </nav>
+          <div className='mt-12'>
+            <img src="epi.png" alt="" className='opacity-70 '/>
+          </div>
         </div>
       </div>
     </div>
   );
 }
+
+export { Sidebar };

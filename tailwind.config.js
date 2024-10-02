@@ -13,9 +13,9 @@ module.exports = {
     //         secondary: "#fafeff",
     //         100: "#eeeeee",
     //       },
-    //       button: {
-    //         primary: "#0286FF",
-    //       },
+          colors: {
+            primary: "#0286FF",
+          },
     //       text: {
     //         primary: "#121212",
     //         100: "#0d0db7",

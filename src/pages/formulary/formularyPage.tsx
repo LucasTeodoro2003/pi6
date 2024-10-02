@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router";
 import { ButtonDarkorWhite } from "../../Features/buttonBlackorWhite";
-import { BackgroundAlert, Header, Sidebar } from "../../widgets";
+import { BackgroundConfig, BackgroundFormulary, Header, Sidebar } from "../../widgets";
 
-function AlertPage() {
+function FormularyPage() {
   useEffect(() => {
     fetch("");
   });
@@ -18,10 +18,10 @@ function AlertPage() {
         }}
       />
       <Sidebar />
-      <BackgroundAlert />
+      <BackgroundFormulary />
       <ButtonDarkorWhite />
     </main>
   );
 }
 
-export { AlertPage };
+export { FormularyPage };

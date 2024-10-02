@@ -2,19 +2,18 @@ import React from "react";
 
 
 interface IniciarTabs {
-  show: boolean;
   setShow: (_: boolean) => void;
   tabs: Array<{ name: string; href: string; current: boolean }>;
   alterIDVideos: (href: string, index: number) => void;
   activeTab: number;
 }
 
-const Tabs: React.FC<IniciarTabs> = ({ show, setShow, tabs, alterIDVideos, activeTab }) => {
+const Tabs: React.FC<IniciarTabs> = ({ setShow, tabs, alterIDVideos, activeTab }) => {
   return (
     <div>
       <div className="hidden sm:block">
         <nav
-          className="isolate flex divide-x divide-gray-200 rounded-lg shadow dark:shadow-gray-600"
+          className="isolate flex divide-x divide-gray-200 dark:divide-gray-600 rounded-lg dark:rounded-none shadow dark:shadow-gray-600"
           aria-label="Tabs"
         >
           {tabs.map((tab, tabIdx) => (
@@ -34,7 +33,7 @@ const Tabs: React.FC<IniciarTabs> = ({ show, setShow, tabs, alterIDVideos, activ
               {activeTab === tabIdx && (
                 <span
                   aria-hidden="true"
-                  className="absolute inset-x-0 bottom-0 h-0.5 bg-indigo-500"
+                  className="absolute inset-x-0 bottom-0 h-0.5 bg-primary"
                 />
               )}
             </a>

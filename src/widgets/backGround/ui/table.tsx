@@ -22,8 +22,7 @@ const Table: React.FC<TableProps> = ({ people }) => {
         </div>
         <div className="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
           <button
-            type="button"
-            className="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto"
+            className="inline-flex items-center justify-center rounded-md border border-transparent px-4 py-2 text-sm font-semibold bg-primary  text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto font-Jakarta"
           >
             Adicionar Funcionário
           </button>
@@ -37,19 +36,19 @@ const Table: React.FC<TableProps> = ({ people }) => {
                 <table className="min-w-full divide-y divide-gray-300 dark:divide-gray-700">
                   <thead className="bg-gray-50 dark:bg-gray-700">
                     <tr>
-                      <th scope="col" className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 dark:text-white sm:pl-6">
+                      <th scope="col" className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold font-Jakarta text-gray-900 dark:text-white sm:pl-6">
                         Name
                       </th>
-                      <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-white">
+                      <th scope="col" className="px-1 py-3.5 text-left text-sm font-semibold font-Jakarta text-gray-900 dark:text-white">
                         Title
                       </th>
-                      <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-white">
+                      <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold font-Jakarta text-gray-900 dark:text-white">
                         Epi's Completas
                       </th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-200 dark:divide-gray-700 bg-white dark:bg-gray-800">
-                    {people.slice(0, 6).map((person) => (  // Limite de 6 pessoas
+                    {people.slice(0, 6).map((person) => (
                       <tr key={person.email}>
                         <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm sm:pl-6">
                           <div className="flex items-center">
@@ -62,7 +61,7 @@ const Table: React.FC<TableProps> = ({ people }) => {
                             </div>
                           </div>
                         </td>
-                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                        <td className="whitespace-nowrap px-1 py-4 text-sm text-gray-500">
                           <div className="text-gray-900 dark:text-white">{person.title}</div>
                           <div className="text-gray-500 dark:text-white">{person.department}</div>
                         </td>
