@@ -7,8 +7,6 @@ https://webhook.site/
 https://api-pi6periodo.azurewebsites.net/index.html
 
 
-
-
 [
    {
       "name":"John Doe",
@@ -24,70 +22,49 @@ https://api-pi6periodo.azurewebsites.net/index.html
       "department":"UI/UX",
       "email":"jane.smith@example.com",
       "image":"https://via.placeholder.com/150",
-      "usingEpi":false
+      "usingEpi":false,
+      "details":[
+         "capacete",
+         "protetor de ouvido",
+         "luva",
+         "avental",
+         "toca"
+      ]
    },
    {
-      "name":"John Doe",
+      "name":"Alice Brown",
       "title":"Developer",
       "department":"Engineering",
-      "email":"john.doe@example.com",
+      "email":"alice.brown@example.com",
       "image":"https://via.placeholder.com/150",
       "usingEpi":true
    },
    {
-      "name":"Jane Smith",
+      "name":"Bob Johnson",
       "title":"Designer",
       "department":"UI/UX",
-      "email":"jane.smith@example.com",
+      "email":"bob.johnson@example.com",
       "image":"https://via.placeholder.com/150",
-      "usingEpi":false
+      "usingEpi":false,
+      "details":[
+         "máscara",
+         "luva de látex",
+         "botas",
+         "jaleco"
+      ]
    },
    {
-      "name":"John Doe",
-      "title":"Developer",
-      "department":"Engineering",
-      "email":"john.doe@example.com",
+      "name":"Charlie Davis",
+      "title":"Tester",
+      "department":"Quality Assurance",
+      "email":"charlie.davis@example.com",
       "image":"https://via.placeholder.com/150",
-      "usingEpi":true
-   },
-   {
-      "name":"Jane Smith",
-      "title":"Designer",
-      "department":"UI/UX",
-      "email":"jane.smith@example.com",
-      "image":"https://via.placeholder.com/150",
-      "usingEpi":false
-   },
-   {
-      "name":"John Doe",
-      "title":"Developer",
-      "department":"Engineering",
-      "email":"john.doe@example.com",
-      "image":"https://via.placeholder.com/150",
-      "usingEpi":true
-   },
-   {
-      "name":"Jane Smith",
-      "title":"Designer",
-      "department":"UI/UX",
-      "email":"jane.smith@example.com",
-      "image":"https://via.placeholder.com/150",
-      "usingEpi":false
-   },
-   {
-      "name":"John Doe",
-      "title":"Developer",
-      "department":"Engineering",
-      "email":"john.doe@example.com",
-      "image":"https://via.placeholder.com/150",
-      "usingEpi":true
-   },
-   {
-      "name":"Jane Smith",
-      "title":"Designer",
-      "department":"UI/UX",
-      "email":"jane.smith@example.com",
-      "image":"https://via.placeholder.com/150",
-      "usingEpi":false
+      "usingEpi":true,
+      "details":[
+         "capacete",
+         "óculos de segurança",
+         "luva",
+         "avental"
+      ]
    }
 ]

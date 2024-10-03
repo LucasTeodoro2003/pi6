@@ -9,7 +9,7 @@ export function EmployeeRow({ person }: EmployeeRowProps) {
   const navigate = useNavigate();
 
   return (
-    <tr key={person.email}>
+    <tr key={person.id}>
       <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm sm:pl-6">
         <div className="flex items-center">
           <div className="h-10 w-10 flex-shrink-0">
