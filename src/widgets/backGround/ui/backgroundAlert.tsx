@@ -1,19 +1,19 @@
 import React from "react";
+import { Person } from "../../../Entities/employee";
+import { TablesAlert } from "../../tablesAlert/ui/tablesAlert";
 
-
-interface InicarCamera {
+interface BackgroundAlertPromps {
+  people: Person[];
 }
 
-
-
-const BackgroundAlert: React.FC<InicarCamera> = () => {
+const BackgroundAlert: React.FC<BackgroundAlertPromps> = ({people}) => {
+  
   return (
     <div className="flex h-screen ml-64">
       <div className="bg-white dark:bg-gray-800 w-full h-full ">
-        Alertas
+        <TablesAlert people={people}/>
         <div className="flex mt-5 ml-9 bg-white dark:bg-gray-800">
-          <div className="flex text-justify w-screen">
-          </div>
+          <div className="flex text-justify w-screen"></div>
         </div>
       </div>
     </div>

@@ -7,3 +7,4 @@ export * from "./formulary/ui/formulary";
 export * from "./SideBar/ui/sidebar";
 export * from "./header/ui/header";
 export * from "./backGround/ui/backgroundFormulary";
+export * from "./tablesAlert/ui/tablesAlert";

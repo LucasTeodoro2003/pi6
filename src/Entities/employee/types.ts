@@ -5,4 +5,5 @@ export interface Person {
   email: string;
   image: string;
   usingEpi: boolean;
+  details: string[];
 }
