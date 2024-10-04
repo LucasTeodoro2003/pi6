@@ -7,4 +7,5 @@ export interface Person {
   image: string;
   usingEpi: boolean;
   details: string[];
+  obs?: string;
 }

@@ -18,7 +18,7 @@ const TablesAlert: React.FC<TablesAlertPromps> = ({ people }) => {
       {people.map((person) => (
         <li
           key={person.id}
-          className="col-span-1 divide-y divide-gray-200 rounded-lg bg-white shadow"
+          className="col-span-1 h-fit divide-y divide-gray-200 rounded-lg bg-white shadow"
         >
           <div className="flex w-full items-center justify-between space-x-6 p-6">
             <div className="flex-1 truncate">
@@ -27,10 +27,13 @@ const TablesAlert: React.FC<TablesAlertPromps> = ({ people }) => {
                   {person.name}
                 </h3>
                 <span
-                  className={`inline-block flex-shrink-0 rounded-full px-2 py-0.5 text-xs font-medium ${person.usingEpi ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
-                    }`}
+                  className={`inline-block flex-shrink-0 rounded-full px-2 py-0.5 text-xs font-medium ${
+                    person.usingEpi
+                      ? "bg-green-100 text-green-800"
+                      : "bg-red-100 text-red-800"
+                  }`}
                 >
-                  {person.usingEpi ? 'Completa' : 'Incompleta'}
+                  {person.usingEpi ? "Completa" : "Incompleta"}
                 </span>
               </div>
               <p className="mt-1 truncate text-sm text-gray-500">
@@ -51,26 +54,30 @@ const TablesAlert: React.FC<TablesAlertPromps> = ({ people }) => {
               >
                 <span className="text-sm">Detalhes</span>
                 <ChevronDownIcon
-                  className={`h-5 w-5 transform transition-transform ${showPersonId === person.id ? "rotate-180" : ""
-                    }`}
+                  className={`h-5 w-5 transform transition-transform ${
+                    showPersonId === person.id ? "rotate-180" : ""
+                  }`}
                 />
               </button>
             </div>
-            <div className={`overflow-hidden transition-all duration-200 ease-in-out ${
-                showPersonId === person.id && person.details ? "max-h-96" : "max-h-52"
-              }`}>
-              {
-                showPersonId === person.id && Array.isArray(person.details) && (
-                  <div className="p-4">
-                    <ul>
-                      {person.details.map((details, index) => (
-                        <li key={index} className="text-sm text-gray-600">
-                          {details}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
+            <div
+              className={`overflow-hidden transition-all duration-200 ease-in-out ${
+                showPersonId === person.id && person.details
+                  ? "max-h-96"
+                  : "max-h-52"
+              }`}
+            >
+              {showPersonId === person.id && Array.isArray(person.details) && (
+                <div className="p-4">
+                  <ul>
+                    {person.details.map((details, index) => (
+                      <li key={index} className="text-sm text-gray-600">
+                        {details}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
           </div>
         </li>

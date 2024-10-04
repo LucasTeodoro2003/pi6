@@ -29,7 +29,7 @@ const Table: React.FC<TableProps> = ({ people }) => {
         <div className="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
             <div className="overflow-hidden shadow ring-1 ring-black dark:ring-white ring-opacity-5 dark:ring-opacity-5 md:rounded-lg">
-              <div className="max-h-96 max-w-max overflow-y-auto">
+              <div className="max-h-72 max-w-max overflow-y-auto">
                 <table className="min-w-full divide-y divide-gray-300 dark:divide-gray-700">
                   <thead className="bg-gray-50 dark:bg-gray-700">
                     <tr>
@@ -41,13 +41,13 @@ const Table: React.FC<TableProps> = ({ people }) => {
                       </th>
                       <th
                         scope="col"
-                        className="px-8 py-3.5 text-left text-sm font-semibold font-Jakarta text-gray-900 dark:text-white"
+                        className="px-4 py-3.5 text-left text-sm font-semibold font-Jakarta text-gray-900 dark:text-white"
                       >
                         Title
                       </th>
                       <th
                         scope="col"
-                        className="px-8 py-3.5 text-left text-sm font-semibold font-Jakarta text-gray-900 dark:text-white"
+                        className="px-4 py-3.5 text-left text-sm font-semibold font-Jakarta text-gray-900 dark:text-white"
                       >
                         Epi's Completas
                       </th>
