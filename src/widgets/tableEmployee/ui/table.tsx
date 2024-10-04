@@ -29,7 +29,7 @@ const Table: React.FC<TableProps> = ({ people }) => {
         <div className="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
             <div className="overflow-hidden shadow ring-1 ring-black dark:ring-white ring-opacity-5 dark:ring-opacity-5 md:rounded-lg">
-              <div className="max-h-72 max-w-max overflow-y-auto">
+              <div className="max-h-96 max-w-max overflow-y-auto">
                 <table className="min-w-full divide-y divide-gray-300 dark:divide-gray-700">
                   <thead className="bg-gray-50 dark:bg-gray-700">
                     <tr>
@@ -37,13 +37,13 @@ const Table: React.FC<TableProps> = ({ people }) => {
                         scope="col"
                         className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold font-Jakarta text-gray-900 dark:text-white sm:pl-6"
                       >
-                        Name
+                        Nome
                       </th>
                       <th
                         scope="col"
                         className="px-4 py-3.5 text-left text-sm font-semibold font-Jakarta text-gray-900 dark:text-white"
                       >
-                        Title
+                        Departamento
                       </th>
                       <th
                         scope="col"
@@ -54,7 +54,7 @@ const Table: React.FC<TableProps> = ({ people }) => {
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-200 dark:divide-gray-700 bg-white dark:bg-gray-800">
-                    {people.slice(0, 6).map((person) => (
+                    {people.map((person) => (
                       <EmployeeRow person={person} />
                     ))}
                   </tbody>

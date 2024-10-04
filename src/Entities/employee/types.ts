@@ -1,11 +1,11 @@
 export interface Person {
   id: number,
   name: string;
-  title: string;
+  sector: string;
   department: string;
   email: string;
   image: string;
   usingEpi: boolean;
-  details: string[];
+  details?: string[];
   obs?: string;
 }

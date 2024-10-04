@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://webhook.site/f99cdb6d-f6fe-4ab0-869f-6e44737b1086",
+  baseURL: "https://webhook.site/7699fd93-4db8-45e9-9718-30e3940e8099",
   timeout: 3000,
 });
 

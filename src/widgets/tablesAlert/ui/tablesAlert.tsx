@@ -37,7 +37,7 @@ const TablesAlert: React.FC<TablesAlertPromps> = ({ people }) => {
                 </span>
               </div>
               <p className="mt-1 truncate text-sm text-gray-500">
-                {person.title}
+                {person.sector}
               </p>
             </div>
             <img
