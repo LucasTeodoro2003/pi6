@@ -1,9 +1,10 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { ConfigPage, FormularyPage, HomePage } from "../../pages";
-import { AlertPage } from "../../pages/alertas/alertPage";
+import { AlertPage } from "../../pages/alertas";
+import { ConfigPage } from "../../pages/config";
+import { FormularyPage } from "../../pages/formulary";
+import { HomePage } from "../../pages/home";
 
-function App() {
-
+function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
@@ -16,4 +17,4 @@ function App() {
   );
 }
 
-export { App };
+export { AppRouter };

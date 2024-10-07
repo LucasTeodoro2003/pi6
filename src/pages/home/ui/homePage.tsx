@@ -1,11 +1,11 @@
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { api, apiUser } from "../../App";
-import { Person, User } from "../../Entities";
-import { ButtonDarkorWhite } from "../../Features/buttonBlackorWhite";
-import { AlertSimple } from "../../shared/ui";
-import { BackgroundHome, Sidebar } from "../../widgets";
-import { Header } from "../../widgets/header/ui/header";
+import { api, apiUser } from "../../../App/serviceApi";
+import { Person, User } from "../../../Entities";
+import { AlertSimple } from "../../../shared/ui";
+import { BackgroundHome } from "../../../widgets/backGround";
+import { Header } from "../../../widgets/header";
+import { Sidebar } from "../../../widgets/SideBar";
 
 function HomePage() {
   const [videosId, setVideosId] = useState("");
@@ -79,7 +79,8 @@ function HomePage() {
     <main>
       <div></div>
       <Header
-        name="Lucas" id={1}
+        name="Lucas"
+        id={1}
         onCameraClick={() => {
           setShow(true);
           setVideosId(tabs[0].href);
@@ -93,8 +94,7 @@ function HomePage() {
         activeTab={activeTab}
       />
       <AlertSimple show={show} setShow={setShow} />
-      <Sidebar user={user}/>
-      <ButtonDarkorWhite />
+      <Sidebar user={user} />
     </main>
   );
 }

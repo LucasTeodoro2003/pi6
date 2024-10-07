@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
-import { api, apiUser } from "../../App";
-import { Person, User } from "../../Entities";
-import { ButtonDarkorWhite } from "../../Features/buttonBlackorWhite";
-import { BackgroundAlert, Header, Sidebar } from "../../widgets";
+import { api, apiUser } from "../../../App/serviceApi";
+import { Person, User } from "../../../Entities";
+import { BackgroundAlert } from "../../../widgets/backGround";
+import { Header } from "../../../widgets/header";
+import { Sidebar } from "../../../widgets/SideBar";
 
 function AlertPage() {
   const navigate = useNavigate();
-  
+
   const [people, setPeople] = useState<Person[]>([]);
   useEffect(() => {
     api
@@ -28,18 +29,17 @@ function AlertPage() {
       });
   }, []);
 
-
   return (
     <main>
-      <Header id={1}
+      <Header
+        id={1}
         name="Lucas"
         onCameraClick={() => {
           navigate("/?cameraID=1");
         }}
       />
-      <Sidebar user={user}/>
-      <BackgroundAlert people={people}/>
-      <ButtonDarkorWhite />
+      <Sidebar user={user} />
+      <BackgroundAlert people={people} />
     </main>
   );
 }
