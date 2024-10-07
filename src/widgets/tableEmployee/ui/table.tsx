@@ -35,19 +35,19 @@ const Table: React.FC<TableProps> = ({ people }) => {
                     <tr>
                       <th
                         scope="col"
-                        className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold font-Jakarta text-gray-900 dark:text-white sm:pl-6"
+                        className="py-3.5 pl-3 pr-3 text-left text-sm font-semibold font-Jakarta text-gray-900 dark:text-white sm:pl-6"
                       >
                         Nome
                       </th>
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-left text-sm font-semibold font-Jakarta text-gray-900 dark:text-white"
+                        className="px-0 py-3.5 text-left text-sm font-semibold font-Jakarta text-gray-900 dark:text-white"
                       >
                         Departamento
                       </th>
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-left text-sm font-semibold font-Jakarta text-gray-900 dark:text-white"
+                        className="px-1 py-3.5 text-center text-sm font-semibold font-Jakarta text-gray-900 dark:text-white"
                       >
                         Epi's Completas
                       </th>
