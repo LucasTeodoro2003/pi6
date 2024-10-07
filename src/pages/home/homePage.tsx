@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { api } from "../../App";
+import { api, apiUser } from "../../App";
 import { Person, User } from "../../Entities";
 import { ButtonDarkorWhite } from "../../Features/buttonBlackorWhite";
 import { AlertSimple } from "../../shared/ui";
@@ -25,7 +25,7 @@ function HomePage() {
 
   const [user, setUser] = useState<User | null>(null);
   useEffect(() => {
-    api
+    apiUser
       .get("/User/GetUser")
       .then((response) => setUser(response.data[0] || null))
       .catch((err) => {

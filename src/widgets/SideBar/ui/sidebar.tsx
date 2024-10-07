@@ -8,7 +8,7 @@ import {
   InboxIcon,
 } from '@heroicons/react/24/outline';
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { User } from '../../../Entities';
 
 interface NavigationItem {
@@ -36,7 +36,7 @@ function classNames(...classes: string[]) {
 
 const Sidebar: React.FC<HomePagePromps> = ({ user }) => {
   const location = useLocation();
-
+  const navegationPages = useNavigate();
   return (
     <div className="hidden md:fixed md:inset-y-0 md:flex md:w-64 md:flex-col">
       <div className="flex min-h-0 flex-1 flex-col border-r border-gray-200 dark:border-gray-900 bg-white dark:bg-gray-800 ">
@@ -76,12 +76,30 @@ const Sidebar: React.FC<HomePagePromps> = ({ user }) => {
           <div className='mt-12'>
             <img src="epi.png" alt="" className='opacity-70 ' />
           </div>
-          <div className='flex justify-end'>
-            {user && user.id && (
+          <div className='flex justify-between items-center mt-2 ml-2 mr-2 rounded-md'>
+            {user ? (
               <>
-            <img className='h-6 w-6 rounded-full' src={user.image} alt={`Foto do ${user.name}`} />
-            <ArrowLeftEndOnRectangleIcon className='mr-2 mt-7 w-6 h-6 dark:text-white' />
-            </>
+                <button className="flex justify-between hover:underline hover:text-gray-500" onClick={() => navegationPages('/Config')}>
+                  <img className='h-8 w-8 rounded-full' src={user.image} alt={`Foto do ${user.name}`} />
+                  <div className='ml-2 flex-auto font-Jakarta font-medium text-xl dark:text-white dark:hover:text-gray-400'>
+                    {user.name}
+                  </div>
+                </button>
+                <button className='mr-2 hover:border-2 hover:border-gray-100 rounded-full px-2 py-2' onClick={() => navegationPages('/')}>
+                  <div className='rounded-full'>
+                    <ArrowLeftEndOnRectangleIcon className='w-6 h-6 dark:text-white' />
+                  </div>
+                </button>
+              </>
+            ) : (
+              <>
+                <button className="flex hover:underline items-center hover:text-gray-500 " onClick={() => navegationPages('/Config')}>
+                  <img className='h-8 w-8 rounded-full ml-4 dark:filter dark:invert' src="usuario.png" alt="" />
+                  <div className='ml-2 text-sm dark:text-white dark:hover:text-gray-400'>
+                    SEM USUARIO
+                  </div>
+                </button>
+              </>
             )}
           </div>
         </div>

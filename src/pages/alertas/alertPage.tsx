@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
-import { api } from "../../App";
+import { api, apiUser } from "../../App";
 import { Person, User } from "../../Entities";
 import { ButtonDarkorWhite } from "../../Features/buttonBlackorWhite";
 import { BackgroundAlert, Header, Sidebar } from "../../widgets";
@@ -20,7 +20,7 @@ function AlertPage() {
 
   const [user, setUser] = useState<User | null>(null);
   useEffect(() => {
-    api
+    apiUser
       .get("/User/GetUser")
       .then((response) => setUser(response.data[0] || null))
       .catch((err) => {

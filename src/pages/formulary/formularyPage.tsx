@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
-import { api } from "../../App";
+import { apiUser } from "../../App";
 import { User } from "../../Entities";
 import { ButtonDarkorWhite } from "../../Features/buttonBlackorWhite";
 import { BackgroundFormulary, Header, Sidebar } from "../../widgets";
@@ -14,7 +14,7 @@ function FormularyPage() {
 
   const [user, setUser] = useState<User | null>(null);
   useEffect(() => {
-    api
+    apiUser
       .get("/User/GetUser")
       .then((response) => setUser(response.data[0] || null))
       .catch((err) => {
