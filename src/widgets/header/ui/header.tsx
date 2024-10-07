@@ -3,6 +3,7 @@ import { ArrowLeftStartOnRectangleIcon } from '@heroicons/react/24/outline';
 
 interface ReceiveName {
     name: string;
+    id: number;
     onCameraClick: () => void;
 }
 

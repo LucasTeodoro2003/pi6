@@ -9,21 +9,23 @@ https://api-pi6periodo.azurewebsites.net/index.html
 
 [
    {
-      "name":"John Doe",
-      "title":"Developer",
-      "department":"Engineering",
-      "email":"john.doe@example.com",
-      "image":"https://via.placeholder.com/150",
-      "usingEpi":true
+      "id": 1,
+      "name": "John Doe",
+      "sector": "setor 1",
+      "department": "Development",
+      "email": "john.doe@example.com",
+      "image": "https://via.placeholder.com/150",
+      "usingEpi": true
    },
    {
-      "name":"Jane Smith",
-      "title":"Designer",
-      "department":"UI/UX",
-      "email":"jane.smith@example.com",
-      "image":"https://via.placeholder.com/150",
-      "usingEpi":false,
-      "details":[
+      "id": 2,
+      "name": "Jane Smith",
+      "sector": "setor 2",
+      "department": "UI/UX",
+      "email": "jane.smith@example.com",
+      "image": "https://via.placeholder.com/150",
+      "usingEpi": false,
+      "details": [
          "capacete",
          "protetor de ouvido",
          "luva",
@@ -32,21 +34,23 @@ https://api-pi6periodo.azurewebsites.net/index.html
       ]
    },
    {
-      "name":"Alice Brown",
-      "title":"Developer",
-      "department":"Engineering",
-      "email":"alice.brown@example.com",
-      "image":"https://via.placeholder.com/150",
-      "usingEpi":true
+      "id": 3,
+      "name": "Alice Brown",
+      "sector": "setor 1",
+      "department": "Development",
+      "email": "alice.brown@example.com",
+      "image": "https://via.placeholder.com/150",
+      "usingEpi": true
    },
    {
-      "name":"Bob Johnson",
-      "title":"Designer",
-      "department":"UI/UX",
-      "email":"bob.johnson@example.com",
-      "image":"https://via.placeholder.com/150",
-      "usingEpi":false,
-      "details":[
+      "id": 4,
+      "name": "Bob Johnson",
+      "sector": "setor 2",
+      "department": "UI/UX",
+      "email": "bob.johnson@example.com",
+      "image": "https://via.placeholder.com/150",
+      "usingEpi": false,
+      "details": [
          "máscara",
          "luva de látex",
          "botas",
@@ -54,13 +58,14 @@ https://api-pi6periodo.azurewebsites.net/index.html
       ]
    },
    {
-      "name":"Charlie Davis",
-      "title":"Tester",
-      "department":"Quality Assurance",
-      "email":"charlie.davis@example.com",
-      "image":"https://via.placeholder.com/150",
-      "usingEpi":true,
-      "details":[
+      "id": 5,
+      "name": "Charlie Davis",
+      "sector": "setor 3",
+      "department": "Testing",
+      "email": "charlie.davis@example.com",
+      "image": "https://via.placeholder.com/150",
+      "usingEpi": true,
+      "details": [
          "capacete",
          "óculos de segurança",
          "luva",

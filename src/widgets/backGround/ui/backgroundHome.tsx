@@ -1,7 +1,7 @@
 import { FaceSmileIcon } from "@heroicons/react/24/outline";
 import React from "react";
 import ReactPlayer from "react-player";
-import { Person } from "../../../Entities/employee";
+import { Person } from "../../../Entities";
 import { AlertEmployee } from "../../alertEmployee/ui/alertEmployee";
 import { Table } from "../../tableEmployee/ui/table";
 import { Tabs } from "../../tabsPlayer/ui/tabs";

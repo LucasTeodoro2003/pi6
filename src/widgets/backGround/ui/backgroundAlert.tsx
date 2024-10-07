@@ -1,5 +1,5 @@
 import React from "react";
-import { Person } from "../../../Entities/employee";
+import { Person } from "../../../Entities";
 import { TablesAlert } from "../../tablesAlert/ui/tablesAlert";
 
 interface BackgroundAlertPromps {

@@ -1,5 +1,7 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
+import { api } from "../../App";
+import { User } from "../../Entities";
 import { ButtonDarkorWhite } from "../../Features/buttonBlackorWhite";
 import { BackgroundFormulary, Header, Sidebar } from "../../widgets";
 
@@ -9,15 +11,26 @@ function FormularyPage() {
   });
   const navigate = useNavigate();
 
+
+  const [user, setUser] = useState<User | null>(null);
+  useEffect(() => {
+    api
+      .get("/User/GetUser")
+      .then((response) => setUser(response.data[0] || null))
+      .catch((err) => {
+        console.error("Aconteceu um erro: " + err);
+      });
+  }, []);
+  
   return (
     <main>
       <Header
-        name="Lucas"
+        name="Lucas" id={1}
         onCameraClick={() => {
           navigate("/?cameraID=1");
         }}
       />
-      <Sidebar />
+      <Sidebar user={user}/>
       <BackgroundFormulary />
       <ButtonDarkorWhite />
     </main>

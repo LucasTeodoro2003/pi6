@@ -1,4 +1,5 @@
 import {
+  ArrowLeftEndOnRectangleIcon,
   BellAlertIcon,
   CalendarIcon,
   Cog8ToothIcon,
@@ -6,12 +7,18 @@ import {
   IdentificationIcon,
   InboxIcon,
 } from '@heroicons/react/24/outline';
+import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { User } from '../../../Entities';
 
 interface NavigationItem {
   name: string;
   link: string;
   icon: React.ElementType;
+}
+
+interface HomePagePromps {
+  user: User | null;
 }
 
 const navigation: NavigationItem[] = [
@@ -27,7 +34,7 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
 }
 
-function Sidebar() {
+const Sidebar: React.FC<HomePagePromps> = ({ user }) => {
   const location = useLocation();
 
   return (
@@ -67,7 +74,15 @@ function Sidebar() {
             ))}
           </nav>
           <div className='mt-12'>
-            <img src="epi.png" alt="" className='opacity-70 '/>
+            <img src="epi.png" alt="" className='opacity-70 ' />
+          </div>
+          <div className='flex justify-end'>
+            {user && user.id && (
+              <>
+            <img className='h-6 w-6 rounded-full' src={user.image} alt={`Foto do ${user.name}`} />
+            <ArrowLeftEndOnRectangleIcon className='mr-2 mt-7 w-6 h-6 dark:text-white' />
+            </>
+            )}
           </div>
         </div>
       </div>

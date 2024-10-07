@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { api } from "../../App";
-import { Person } from "../../Entities/employee";
+import { Person, User } from "../../Entities";
 import { ButtonDarkorWhite } from "../../Features/buttonBlackorWhite";
 import { BackgroundAlert, Header, Sidebar } from "../../widgets";
 
@@ -18,16 +18,26 @@ function AlertPage() {
       });
   }, []);
 
+  const [user, setUser] = useState<User | null>(null);
+  useEffect(() => {
+    api
+      .get("/User/GetUser")
+      .then((response) => setUser(response.data[0] || null))
+      .catch((err) => {
+        console.error("Aconteceu um erro: " + err);
+      });
+  }, []);
+
 
   return (
     <main>
-      <Header
+      <Header id={1}
         name="Lucas"
         onCameraClick={() => {
           navigate("/?cameraID=1");
         }}
       />
-      <Sidebar />
+      <Sidebar user={user}/>
       <BackgroundAlert people={people}/>
       <ButtonDarkorWhite />
     </main>

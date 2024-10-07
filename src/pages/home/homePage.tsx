@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { api } from "../../App";
-import { Person } from "../../Entities/employee";
+import { Person, User } from "../../Entities";
 import { ButtonDarkorWhite } from "../../Features/buttonBlackorWhite";
 import { AlertSimple } from "../../shared/ui";
 import { BackgroundHome, Sidebar } from "../../widgets";
@@ -18,6 +18,16 @@ function HomePage() {
     api
       .get("/PersonController/GetPersons")
       .then((response) => setPeople(response.data))
+      .catch((err) => {
+        console.error("Aconteceu um erro: " + err);
+      });
+  }, []);
+
+  const [user, setUser] = useState<User | null>(null);
+  useEffect(() => {
+    api
+      .get("/User/GetUser")
+      .then((response) => setUser(response.data[0] || null))
       .catch((err) => {
         console.error("Aconteceu um erro: " + err);
       });
@@ -69,7 +79,7 @@ function HomePage() {
     <main>
       <div></div>
       <Header
-        name="Lucas"
+        name="Lucas" id={1}
         onCameraClick={() => {
           setShow(true);
           setVideosId(tabs[0].href);
@@ -83,7 +93,7 @@ function HomePage() {
         activeTab={activeTab}
       />
       <AlertSimple show={show} setShow={setShow} />
-      <Sidebar />
+      <Sidebar user={user}/>
       <ButtonDarkorWhite />
     </main>
   );
