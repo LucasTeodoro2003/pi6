@@ -26,22 +26,22 @@ function HomePage() {
   const tabs = useMemo(
     () => [
       {
-        name: "1",
+        name: "Setor 1",
         href: "https://www.youtube.com/watch?v=e6nZXpaeXhs",
         current: activeTab === 0,
       },
       {
-        name: "2",
+        name: "Setor 2",
         href: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
         current: activeTab === 1,
       },
       {
-        name: "3",
+        name: "Setor 3",
         href: "https://www.youtube.com/watch?v=3fumBcKC6RE",
         current: activeTab === 2,
       },
       {
-        name: "4",
+        name: "Setor 4",
         href: "https://www.youtube.com/watch?v=2Vv-BfVoq4g",
         current: activeTab === 3,
       },

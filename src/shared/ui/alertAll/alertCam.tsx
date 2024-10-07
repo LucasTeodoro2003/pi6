@@ -1,6 +1,6 @@
 import { Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/20/solid";
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 
 interface AtiveAlert {
   show: boolean;
@@ -8,6 +8,17 @@ interface AtiveAlert {
 }
 
 const AlertSimple: React.FC<AtiveAlert> = ({ show, setShow }) => {
+  useEffect(() => {
+    if (show) {
+      const timer = setTimeout(() => {
+        setShow(false);
+      }, 10000);
+      return () => clearTimeout(timer);
+    }
+  }, [show, setShow]);
+
+
+
   return (
     <>
       <div
@@ -18,7 +29,7 @@ const AlertSimple: React.FC<AtiveAlert> = ({ show, setShow }) => {
           <Transition
             show={show}
             as={Fragment}
-            enter="transform ease-out duration-300 transition"
+            enter="transform ease-out duration-100 transition"
             enterFrom="translate-y-2 opacity-0 sm:translate-y-0 sm:translate-x-2"
             enterTo="translate-y-0 opacity-100 sm:translate-x-0"
             leave="transition ease-in duration-100"
