@@ -44,7 +44,7 @@ const BackgroundHome: React.FC<BackgroundHomeProps> = ({
                   <Table people={people} />
                 </div>
                 <div className="px-36 mx-36 mt-4">
-                <AlertEmployee />
+                <AlertEmployee people={people}/>
                 </div>
               </div>
             ) : (
