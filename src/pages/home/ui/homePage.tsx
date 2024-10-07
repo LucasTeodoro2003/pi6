@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { api, apiUser } from "../../../App/serviceApi";
-import { Person, User } from "../../../Entities";
+import { Person } from "../../../Entities/employee";
+import { User } from "../../../Entities/users";
 import { AlertSimple } from "../../../shared/ui";
 import { BackgroundHome } from "../../../widgets/backGround";
 import { Header } from "../../../widgets/header";

@@ -9,7 +9,7 @@ import {
 } from '@heroicons/react/24/outline';
 import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { User } from '../../../Entities';
+import { User } from '../../../Entities/users';
 
 interface NavigationItem {
   name: string;

@@ -1,6 +1,6 @@
 import { CameraIcon, MoonIcon, SunIcon } from "@heroicons/react/20/solid";
 import { useState } from "react";
-import { showMessage } from "../../../Features/buttonBlackorWhite/lib/showMessage";
+import { showMessage } from "../../../Features/lightOrDark/lib/showMessage";
 
 interface ReceiveName {
   name: string;

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { EmployeeRow, Person } from "../../../Entities";
+import { EmployeeRow, Person } from "../../../Entities/employee";
 
 interface TableProps {
   people: Person[];

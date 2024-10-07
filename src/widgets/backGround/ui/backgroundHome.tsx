@@ -1,7 +1,7 @@
 import { FaceSmileIcon } from "@heroicons/react/24/outline";
 import React from "react";
 import ReactPlayer from "react-player";
-import { Person } from "../../../Entities";
+import { Person } from "../../../Entities/employee";
 import { AlertEmployee } from "../../alertEmployee/ui/alertEmployee";
 import { Table } from "../../tableEmployee/ui/table";
 import { Tabs } from "../../tabsPlayer/ui/tabs";
@@ -44,7 +44,7 @@ const BackgroundHome: React.FC<BackgroundHomeProps> = ({
                   <Table people={people} />
                 </div>
                 <div className="px-36 mx-36 mt-4">
-                <AlertEmployee people={people}/>
+                  <AlertEmployee people={people} />
                 </div>
               </div>
             ) : (

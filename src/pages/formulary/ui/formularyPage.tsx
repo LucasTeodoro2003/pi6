@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { apiUser } from "../../../App/serviceApi";
-import { User } from "../../../Entities";
+import { User } from "../../../Entities/users";
 import { BackgroundFormulary } from "../../../widgets/backGround";
 import { Header } from "../../../widgets/header";
 import { Sidebar } from "../../../widgets/SideBar";

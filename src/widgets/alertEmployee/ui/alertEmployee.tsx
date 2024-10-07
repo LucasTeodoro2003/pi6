@@ -1,6 +1,6 @@
 import { CheckCircleIcon, XCircleIcon } from '@heroicons/react/20/solid';
 import React from 'react';
-import { Person } from '../../../Entities';
+import { Person } from '../../../Entities/employee';
 
 interface AlertEmployeePromps {
   people: Person[];

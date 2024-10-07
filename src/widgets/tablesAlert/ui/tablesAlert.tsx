@@ -1,6 +1,6 @@
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import React, { useState } from "react";
-import { Person } from "../../../Entities";
+import { Person } from "../../../Entities/employee";
 
 interface TablesAlertPromps {
   people: Person[];
