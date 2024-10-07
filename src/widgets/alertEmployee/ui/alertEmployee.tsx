@@ -1,4 +1,4 @@
-import { XCircleIcon } from '@heroicons/react/20/solid';
+import { CheckCircleIcon, FaceSmileIcon, XCircleIcon } from '@heroicons/react/20/solid';
 import React from 'react';
 import { Person } from '../../../Entities';
 
@@ -13,16 +13,16 @@ const AlertEmployee: React.FC<AlertEmployeePromps> = ({ people }) => {
   return (
     <div>
       {usingEpi === peopleCount ? (
-        <div className="rounded-md bg-green-50 p-4">
+        <div className="rounded-md bg-green-100 p-4 mr-32">
           <div className="flex">
             <div className="flex-shrink-0">
               <svg className="h-5 w-5 text-green-400" aria-hidden="true">
-                {/* Ícone de sucesso (pode substituir por um ícone adequado) */}
-                <circle cx="10" cy="10" r="8" fill="green" />
+                <CheckCircleIcon className='h-5 w-5 text-green-500' aria-hidden="true" />
               </svg>
             </div>
-            <div className="ml-3">
-              <h3 className="text-sm font-medium text-green-800">Está tudo correto! Todos estão usando EPI.</h3>
+            <div>
+              <h3 className="text-sm font-medium text-green-800">Está tudo correto! Todos estão usando as devidas EPI's.</h3>
+              <FaceSmileIcon className='mt-3 h-6 w-6'/>
             </div>
           </div>
         </div>
