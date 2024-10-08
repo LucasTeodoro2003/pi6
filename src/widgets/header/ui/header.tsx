@@ -1,6 +1,5 @@
 import { CameraIcon } from "@heroicons/react/20/solid";
-import { ToggleDarkorWhite } from "../../../shared/ui";
-
+import { ToggleDarkorWhiteV2 } from "../../../shared/ui";
 interface ReceiveName {
   name: string;
   id: number;
@@ -21,7 +20,7 @@ const Header: React.FC<ReceiveName> = ({ name, onCameraClick }) => {
                 className="w-8 h-8 text-gray-800 dark:text-white"
               />
             </button>
-            <ToggleDarkorWhite />
+            <ToggleDarkorWhiteV2 />
           </div>
         </div>
       </div>

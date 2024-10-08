@@ -1,2 +1,2 @@
 export * from "./alertAll/alertCam"
-export * from "./toggle/toggleDarkOrWhite"
+export * from "./toogleWithEfects/toggleDarkOrWhiteV2"
