@@ -1,6 +1,5 @@
-import { CameraIcon, MoonIcon, SunIcon } from "@heroicons/react/20/solid";
-import { useState } from "react";
-import { showMessage } from "../../../Features/lightOrDark/lib/showMessage";
+import { CameraIcon } from "@heroicons/react/20/solid";
+import { ToggleDarkorWhite } from "../../../shared/ui";
 
 interface ReceiveName {
   name: string;
@@ -9,13 +8,6 @@ interface ReceiveName {
 }
 
 const Header: React.FC<ReceiveName> = ({ name, onCameraClick }) => {
-  const [isDark, setIsDark] = useState(false);
-
-  const toggleDarkMode = () => {
-    document.body.classList.toggle("dark");
-    setIsDark(document.body.classList.contains(`dark`));
-  };
-
   return (
     <>
       <div className="bg-white dark:bg-gray-800 pt-8 border-gray-200 dark:border-gray-900 border-b-2">
@@ -29,18 +21,7 @@ const Header: React.FC<ReceiveName> = ({ name, onCameraClick }) => {
                 className="w-8 h-8 text-gray-800 dark:text-white"
               />
             </button>
-            <button
-              onClick={() => {
-                toggleDarkMode();
-                showMessage();
-              }}
-            >
-              {isDark ? (
-                  <SunIcon className="w-8 h-8" />
-            ) : (
-                  <MoonIcon className="w-8 h-8" />
-              )}
-            </button>
+            <ToggleDarkorWhite />
           </div>
         </div>
       </div>
