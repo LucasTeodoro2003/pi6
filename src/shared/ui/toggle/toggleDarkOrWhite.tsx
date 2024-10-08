@@ -19,14 +19,14 @@ export default function ToggleDarkorWhite() {
       checked={isDark}
       onChange={toggleDarkMode}
       className={classNames(
-        isDark ? "bg-blue-300" : "bg-yellow-200 ",
-        "relative inline-flex mt-1 h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-800 focus:ring-offset-2"
+        isDark ? "bg-blue-300" : "bg-yellow-200",
+        "dark:bg-blue-300 relative inline-flex mt-1 h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
       )}
     >
       <span
         className={classNames(
           isDark ? "translate-x-5" : "translate-x-0",
-          "pointer-events-none relative inline-block h-5 w-5 transform rounded-full bg-yellow-400 dark:bg-blue-400 shadow ring-0 transition duration-200 ease-in-out"
+          "dark:translate-x-5 pointer-events-none relative inline-block h-5 w-5 transform rounded-full bg-yellow-300 dark:bg-blue-400 shadow ring-0 transition duration-200 ease-in-out"
         )}
       >
         <span
@@ -34,18 +34,18 @@ export default function ToggleDarkorWhite() {
             isDark
               ? "opacity-0 ease-out duration-100"
               : "opacity-100 ease-in duration-200",
-            "absolute inset-0 flex h-full w-full items-center justify-center transition-opacity"
+            "dark:opacity-0 absolute inset-0 flex h-full w-full items-center justify-center transition-opacity"
           )}
           aria-hidden="true"
-        >
-          <SunIcon className="h-4 w-4" />
+        > 
+          <SunIcon className="h-4 w-4 text-white" />
         </span>
         <span
           className={classNames(
             isDark
               ? "opacity-100 ease-in duration-200"
               : "opacity-0 ease-out duration-100",
-            "absolute inset-0 flex h-full w-full items-center justify-center transition-opacity"
+            "dark:opacity-100 absolute inset-0 flex h-full w-full items-center justify-center transition-opacity"
           )}
           aria-hidden="true"
         >
