@@ -1,6 +1,6 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { api, apiUser } from "../../../App/serviceApi";
+import { api, apiTabs, apiUser } from "../../../App/serviceApi";
 import { Person } from "../../../Entities/employee";
 import { User } from "../../../Entities/users";
 import { AlertSimple } from "../../../shared/ui";
@@ -13,6 +13,10 @@ function HomePage() {
   const [show, setShow] = useState(false);
   const [activeTab, setActiveTab] = useState(0);
   const [params, setParams] = useSearchParams();
+  const [tabs, setTabs] = useState<Array<{ name: string; href: string; current: boolean }>>([
+    { name: "Setor 01", href: "https://www.youtube.com/watch?v=e6nZXpaeXhs", current: activeTab === 0 },
+  ]);
+
 
   const [people, setPeople] = useState<Person[]>([]);
   useEffect(() => {
@@ -34,31 +38,21 @@ function HomePage() {
       });
   }, []);
 
-  const tabs = useMemo(
-    () => [
-      {
-        name: "Setor 1",
-        href: "https://www.youtube.com/watch?v=e6nZXpaeXhs",
-        current: activeTab === 0,
-      },
-      {
-        name: "Setor 2",
-        href: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-        current: activeTab === 1,
-      },
-      {
-        name: "Setor 3",
-        href: "https://www.youtube.com/watch?v=3fumBcKC6RE",
-        current: activeTab === 2,
-      },
-      {
-        name: "Setor 4",
-        href: "https://www.youtube.com/watch?v=2Vv-BfVoq4g",
-        current: activeTab === 3,
-      },
-    ],
-    [activeTab]
-  );
+  useEffect(() => {
+    apiTabs.get("/Cam/GetCam")
+      .then((response) => {
+        const fetchedTabs = response.data.map((tab: { name: string; href: string }, index: number) => ({
+          name: tab.name,
+          href: tab.href,
+          current: activeTab === index,
+        }));
+        setTabs(fetchedTabs);
+      })
+      .catch((err) => {
+        console.error("Aconteceu um erro: " + err);
+      });
+  }, [activeTab]);
+
 
   useEffect(() => {
     const cameraID = params.get("cameraID");
