@@ -34,9 +34,17 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
 }
 
+
+
 const Sidebar: React.FC<HomePagePromps> = ({ user }) => {
   const location = useLocation();
   const navegationPages = useNavigate();
+  const deleteAll = () => {
+    localStorage.removeItem('user');
+    localStorage.removeItem('people');
+    localStorage.removeItem('tabs');
+  };
+
   return (
     <div className="hidden md:fixed md:inset-y-0 md:flex md:w-64 md:flex-col">
       <div className="flex min-h-0 flex-1 flex-col border-r border-gray-200 dark:border-gray-900 bg-white dark:bg-gray-800 ">
@@ -85,7 +93,7 @@ const Sidebar: React.FC<HomePagePromps> = ({ user }) => {
                     {user.name}
                   </div>
                 </button>
-                <button className='mr-2 hover:border-2 hover:border-gray-100 rounded-full px-2 py-2' onClick={() => navegationPages('/')}>
+                <button className='mr-2 hover:border-2 hover:border-gray-100 rounded-full px-2 py-2' onClick={deleteAll}>
                   <div className='rounded-full'>
                     <ArrowLeftEndOnRectangleIcon className='w-6 h-6 dark:text-white' />
                   </div>

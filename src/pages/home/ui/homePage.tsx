@@ -14,52 +14,85 @@ function HomePage() {
   const [activeTab, setActiveTab] = useState(0);
   const [params, setParams] = useSearchParams();
   const [tabs, setTabs] = useState<Array<{ name: string; href: string; current: boolean }>>([
-    { name: "Setor 01", href: "https://www.youtube.com/watch?v=e6nZXpaeXhs", current: activeTab === 0 },
+    { name: "Setor 01", href: "https://www.youtube.com/watch?v=DB68T2s7gfI&pp=ygUMZXJyb3Igc2NyZWVu", current: activeTab === 0 },
   ]);
-
-
   const [people, setPeople] = useState<Person[]>([]);
-  useEffect(() => {
-    api
-      .get("/PersonController/GetPersons")
-      .then((response) => setPeople(response.data))
-      .catch((err) => {
-        console.error("Aconteceu um erro: " + err);
-      });
-  }, []);
-
   const [user, setUser] = useState<User | null>(null);
+
+
+
+  const getCachedData = (key: string) => {
+    const cachedData = localStorage.getItem(key);
+    return cachedData ? JSON.parse(cachedData) : null;
+  };
+  const setCachedData = (key: string, data: any) => {
+    localStorage.setItem(key, JSON.stringify(data));
+  };
+
+
   useEffect(() => {
-    apiUser
-      .get("/User/GetUser")
-      .then((response) => setUser(response.data[0] || null))
-      .catch((err) => {
-        console.error("Aconteceu um erro: " + err);
-      });
+    const cachedPeople = getCachedData('people');
+    if (cachedPeople) {
+      setPeople(cachedPeople);
+    } else {
+      api.get("/PersonController/GetPersons")
+        .then((response) => {
+          setPeople(response.data);
+          setCachedData('people', response.data);
+        })
+        .catch((err) => {
+          console.error("Aconteceu um erro: " + err);
+        });
+    }
   }, []);
 
   useEffect(() => {
-    apiTabs.get("/Cam/GetCam")
-      .then((response) => {
-        const fetchedTabs = response.data.map((tab: { name: string; href: string }, index: number) => ({
-          name: tab.name,
-          href: tab.href,
-          current: activeTab === index,
-        }));
-        setTabs(fetchedTabs);
-      })
-      .catch((err) => {
-        console.error("Aconteceu um erro: " + err);
-      });
-  }, [activeTab]);
+    const cachedUser = getCachedData('user');
+    if (cachedUser) {
+      setUser(cachedUser);
+    } else {
+      apiUser.get("/User/GetUser")
+        .then((response) => {
+          const fetchedUser = response.data[0] || null;
+          setUser(fetchedUser);
+          setCachedData('user', fetchedUser);
+        })
+        .catch((err) => {
+          console.error("Aconteceu um erro: " + err);
+        });
+    }
+  }, []);
 
+  useEffect(() => {
+    const cachedTabs = getCachedData('tabs');
+    if (cachedTabs) {
+      setTabs(cachedTabs);
+    } else {
+      apiTabs.get("/Cam/GetCam")
+        .then((response) => {
+          const fetchedTabs = response.data.map((tab: { name: string; href: string }, index: number) => ({
+            name: tab.name,
+            href: tab.href,
+            current: activeTab === index,
+          }));
+          setTabs(fetchedTabs);
+          setCachedData('tabs', fetchedTabs);
+        })
+        .catch((err) => {
+          console.error("Aconteceu um erro: " + err);
+        });
+    }
+  }, [activeTab]);
 
   useEffect(() => {
     const cameraID = params.get("cameraID");
     if (cameraID) {
-      setShow(true);
-      setActiveTab(parseInt(cameraID) - 1);
-      setVideosId(tabs[parseInt(cameraID) - 1].href);
+      const id = parseInt(cameraID) - 1;
+      if (id >= 0 && id < tabs.length) {
+        setShow(true);
+        setActiveTab(id);
+        setVideosId(tabs[id].href);
+      }
     }
     setParams(undefined);
   }, [params, tabs, setParams]);
