@@ -18,12 +18,12 @@ const TablesAlert: React.FC<TablesAlertPromps> = ({ people }) => {
       {people.map((person) => (
         <li
           key={person.id}
-          className="col-span-1 h-fit divide-y divide-gray-200 rounded-lg bg-white shadow"
+          className="col-span-1 h-fit divide-y divide-gray-200 rounded-lg bg-white dark:bg-gray-700 shadow"
         >
           <div className="flex w-full items-center justify-between space-x-6 p-6">
             <div className="flex-1 truncate">
               <div className="flex items-center space-x-3">
-                <h3 className="truncate text-sm font-medium text-gray-900">
+                <h3 className="truncate text-sm font-medium text-gray-900 dark:text-white">
                   {person.name}
                 </h3>
                 <span
@@ -36,12 +36,12 @@ const TablesAlert: React.FC<TablesAlertPromps> = ({ people }) => {
                   {person.usingEpi ? "Completa" : "Incompleta"}
                 </span>
               </div>
-              <p className="mt-1 truncate text-sm text-gray-500">
+              <p className="mt-1 truncate text-sm text-gray-500 dark:text-white">
                 {person.sector}
               </p>
             </div>
             <img
-              className="h-10 w-10 flex-shrink-0 rounded-full bg-gray-300"
+              className="h-10 w-10 flex-shrink-0 rounded-full bg-gray-300 dark:bg-gray-900"
               src={person.image}
               alt=""
             />
@@ -52,7 +52,7 @@ const TablesAlert: React.FC<TablesAlertPromps> = ({ people }) => {
                 onClick={() => detailsPerson(person.id)}
                 className="text-gray-500 flex items-center space-x-2 focus:outline-none"
               >
-                <span className="text-sm">Detalhes</span>
+                <span className="text-sm dark:text-white">Detalhes</span>
                 <ChevronDownIcon
                   className={`h-5 w-5 transform transition-transform ${
                     showPersonId === person.id ? "rotate-180" : ""
@@ -71,7 +71,7 @@ const TablesAlert: React.FC<TablesAlertPromps> = ({ people }) => {
                 <div className="p-4">
                   <ul>
                     {person.details.map((details, index) => (
-                      <li key={index} className="text-sm text-gray-600">
+                      <li key={index} className="text-sm text-gray-600 dark:text-white">
                         {details}
                       </li>
                     ))}

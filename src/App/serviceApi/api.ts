@@ -2,14 +2,14 @@ import axios from "axios";
 
 
 // PEOPLE COM FALTA DE EPI
-// const api = axios.create({
-//   baseURL: "https://webhook.site/a35ffa4f-77b9-4eda-ab38-5dce898e9293",
-//   timeout: 1000,
-// });
-// const apiUser = axios.create({
-//   baseURL: "",
-//   timeout: 1000,
-// })
+const api = axios.create({
+  baseURL: "https://webhook.site/a35ffa4f-77b9-4eda-ab38-5dce898e9293",
+  timeout: 1000,
+});
+const apiUser = axios.create({
+  baseURL: "",
+  timeout: 1000,
+})
 
 
 // PEOPLE TUDO CORRETO
@@ -35,13 +35,13 @@ import axios from "axios";
 
 
 // SO FUNCIONAR 
-const api = axios.create({
-  baseURL: "",
-  timeout: 1000,
-});
-const apiUser = axios.create({
-  baseURL: "",
-  timeout: 1000,
-});
+// const api = axios.create({
+//   baseURL: "",
+//   timeout: 1000,
+// });
+// const apiUser = axios.create({
+//   baseURL: "",
+//   timeout: 1000,
+// });
 
 export { api, apiUser };
