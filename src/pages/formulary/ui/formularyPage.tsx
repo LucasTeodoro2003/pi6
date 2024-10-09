@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState} from "react";
 import { useNavigate } from "react-router";
 import { apiUser } from "../../../App/serviceApi";
 import { User } from "../../../Entities/users";
@@ -11,22 +11,38 @@ function FormularyPage() {
     fetch("");
   });
   const navigate = useNavigate();
-
   const [user, setUser] = useState<User | null>(null);
+
+
+  const getCachedData = (key: string) => {
+    const cachedData = localStorage.getItem(key);
+    return cachedData ? JSON.parse(cachedData) : null;
+  };
+  const setCachedData = (key: string, data: any) => {
+    localStorage.setItem(key, JSON.stringify(data));
+  };
+
   useEffect(() => {
-    apiUser
-      .get("/User/GetUser")
-      .then((response) => setUser(response.data[0] || null))
-      .catch((err) => {
-        console.error("Aconteceu um erro: " + err);
-      });
+    const cachedUser = getCachedData('user');
+    if (cachedUser) {
+      setUser(cachedUser);
+    } else {
+      apiUser.get("/User/GetUser")
+        .then((response) => {
+          const fetchedUser = response.data[0] || null;
+          setUser(fetchedUser);
+          setCachedData('user', fetchedUser);
+        })
+        .catch((err) => {
+          console.error("Aconteceu um erro: " + err);
+        });
+    }
   }, []);
 
   return (
     <main>
       <Header
-        name="Lucas"
-        id={1}
+        user={user}
         onCameraClick={() => {
           navigate("/?cameraID=1");
         }}

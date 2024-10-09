@@ -43,6 +43,7 @@ const Sidebar: React.FC<HomePagePromps> = ({ user }) => {
     localStorage.removeItem('user');
     localStorage.removeItem('people');
     localStorage.removeItem('tabs');
+    navegationPages("/Login");
   };
 
   return (
@@ -101,7 +102,7 @@ const Sidebar: React.FC<HomePagePromps> = ({ user }) => {
               </>
             ) : (
               <>
-                <button className="flex hover:underline items-center hover:text-gray-500 " onClick={() => navegationPages('/Config')}>
+                <button className="flex hover:underline items-center hover:text-gray-500 " onClick={() => navegationPages('/Login')}>
                   <img className='h-8 w-8 rounded-full ml-4 dark:filter dark:invert' src="usuario.png" alt="" />
                   <div className='ml-2 text-sm dark:text-white dark:hover:text-gray-400'>
                     SEM USUARIO

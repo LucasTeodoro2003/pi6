@@ -11,30 +11,56 @@ function AlertPage() {
   const navigate = useNavigate();
 
   const [people, setPeople] = useState<Person[]>([]);
+  const [user, setUser] = useState<User | null>(null);
+
+
+
+  const getCachedData = (key: string) => {
+    const cachedData = localStorage.getItem(key);
+    return cachedData ? JSON.parse(cachedData) : null;
+  };
+  const setCachedData = (key: string, data: any) => {
+    localStorage.setItem(key, JSON.stringify(data));
+  };
+
+
   useEffect(() => {
-    api
-      .get("/PersonController/GetPersons")
-      .then((response) => setPeople(response.data))
-      .catch((err) => {
-        console.error("Aconteceu um erro: " + err);
-      });
+    const cachedPeople = getCachedData('people');
+    if (cachedPeople) {
+      setPeople(cachedPeople);
+    } else {
+      api.get("/PersonController/GetPersons")
+        .then((response) => {
+          setPeople(response.data);
+          setCachedData('people', response.data);
+        })
+        .catch((err) => {
+          console.error("Aconteceu um erro: " + err);
+        });
+    }
   }, []);
 
-  const [user, setUser] = useState<User | null>(null);
   useEffect(() => {
-    apiUser
-      .get("/User/GetUser")
-      .then((response) => setUser(response.data[0] || null))
-      .catch((err) => {
-        console.error("Aconteceu um erro: " + err);
-      });
+    const cachedUser = getCachedData('user');
+    if (cachedUser) {
+      setUser(cachedUser);
+    } else {
+      apiUser.get("/User/GetUser")
+        .then((response) => {
+          const fetchedUser = response.data[0] || null;
+          setUser(fetchedUser);
+          setCachedData('user', fetchedUser);
+        })
+        .catch((err) => {
+          console.error("Aconteceu um erro: " + err);
+        });
+    }
   }, []);
 
   return (
     <main>
       <Header
-        id={1}
-        name="Lucas"
+        user={user}
         onCameraClick={() => {
           navigate("/?cameraID=1");
         }}

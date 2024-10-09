@@ -107,8 +107,7 @@ function HomePage() {
     <main>
       <div></div>
       <Header
-        name="Lucas"
-        id={1}
+        user={user}
         onCameraClick={() => {
           setShow(true);
           setVideosId(tabs[0].href);
