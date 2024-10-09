@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
+// import { useAuth } from "../../../App/authPages"; 
 import { api, apiTabs, apiUser } from "../../../App/serviceApi";
 import { Person } from "../../../Entities/employee";
 import { User } from "../../../Entities/users";
@@ -7,6 +8,7 @@ import { AlertSimple } from "../../../shared/ui";
 import { BackgroundHome } from "../../../widgets/backGround";
 import { Header } from "../../../widgets/header";
 import { Sidebar } from "../../../widgets/SideBar";
+// import { NotFoundPage } from "../../notFound";
 
 function HomePage() {
   const [videosId, setVideosId] = useState("");
@@ -18,15 +20,16 @@ function HomePage() {
   ]);
   const [people, setPeople] = useState<Person[]>([]);
   const [user, setUser] = useState<User | null>(null);
+  // const { isLoggedIn } = useAuth();
 
   const getCachedData = (key: string) => {
     const cachedData = localStorage.getItem(key);
     return cachedData ? JSON.parse(cachedData) : null;
   };
+  
   const setCachedData = (key: string, data: any) => {
     localStorage.setItem(key, JSON.stringify(data));
   };
-
 
   useEffect(() => {
     const cachedPeople = getCachedData('people');
@@ -101,9 +104,13 @@ function HomePage() {
     setShow(true);
   };
 
+  // Renderiza a página de erro se o usuário não estiver logado
+  // if (!isLoggedIn) {
+  //   return <NotFoundPage />;
+  // }
+
   return (
     <main>
-      <div></div>
       <Header
         user={user}
         onCameraClick={() => {
