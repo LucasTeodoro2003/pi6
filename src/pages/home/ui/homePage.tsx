@@ -104,7 +104,6 @@ function HomePage() {
     setShow(true);
   };
 
-  // Renderiza a página de erro se o usuário não estiver logado
   // if (!isLoggedIn) {
   //   return <NotFoundPage />;
   // }

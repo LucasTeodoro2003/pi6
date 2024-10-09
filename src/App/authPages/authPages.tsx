@@ -13,7 +13,6 @@ const useAuth = () => {
       try {
         const decoded: any = jwtDecode(token);
 
-        // Verifica se o token está expirado
         if (decoded.exp * 1000 < Date.now()) {
           console.log("Token expirado");
           setIsLoggedIn(false);
