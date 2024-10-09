@@ -9,7 +9,7 @@ const Table: React.FC<TableProps> = ({ people }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="ml-6 w-full divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow">
+    <div className="ml-6 w-full divide-y divide-gray-200 overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-600 shadow">
       <div className="flex justify-between items-center px-4 py-5 sm:px-6">
         <h3 className="text-lg font-semibold font-Jakarta leading-6 text-gray-900">
           Funcionarios
