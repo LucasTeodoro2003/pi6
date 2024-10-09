@@ -22,7 +22,7 @@ interface HomePagePromps {
 }
 
 const navigation: NavigationItem[] = [
-  { name: 'Home', link: '/', icon: HomeIcon },
+  { name: 'Home', link: '/home', icon: HomeIcon },
   { name: 'Alertas', link: '/alertas', icon: BellAlertIcon },
   { name: 'Funcionários', link: '/formulary', icon: IdentificationIcon },
   { name: 'Calendar', link: '#', icon: CalendarIcon },

@@ -10,7 +10,7 @@ function AppRouter() {
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<Login />}/>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/home" element={<HomePage />} />
         <Route path="/alertas" element={<AlertPage />} />
         <Route path="/Config" element={<ConfigPage />} />
         <Route path="/formulary" element={<FormularyPage />} />

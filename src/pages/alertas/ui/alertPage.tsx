@@ -62,7 +62,7 @@ function AlertPage() {
       <Header
         user={user}
         onCameraClick={() => {
-          navigate("/?cameraID=1");
+          navigate("/home?cameraID=1");
         }}
       />
       <Sidebar user={user} />

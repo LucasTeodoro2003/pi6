@@ -19,8 +19,6 @@ function HomePage() {
   const [people, setPeople] = useState<Person[]>([]);
   const [user, setUser] = useState<User | null>(null);
 
-
-
   const getCachedData = (key: string) => {
     const cachedData = localStorage.getItem(key);
     return cachedData ? JSON.parse(cachedData) : null;
