@@ -25,7 +25,7 @@ export function EmployeeRow({ person }: EmployeeRowProps) {
           </div>
         </div>
       </td>
-      <td className="whitespace-nowrap px-0 py-4 text-sm text-gray-500">
+      <td className="whitespace-nowrap px-1 py-4 text-sm text-gray-500">
         <div className="text-gray-900 dark:text-white">{person.sector}</div>
         <div className="text-gray-500 dark:text-white">{person.department}</div>
       </td>

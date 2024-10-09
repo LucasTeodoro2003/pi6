@@ -16,9 +16,9 @@ const TabsWithReactPlayer: React.FC<tabsWithReactPlayerProps> = ({
   activeTab,
 }) => {
   return (
-    <div className="divide-y divide-gray-200 overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-600 shadow w-full">
+    <div className="divide-y divide-gray-200 dark:divide-slate-700 overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-600 shadow w-full">
       <div className="px-4 py-[27px] sm:px-6">
-        <h3 className="text-lg font-semibold font-Jakarta leading-6 text-gray-900">
+        <h3 className="text-lg font-semibold font-Jakarta leading-6 text-gray-900 dark:text-white">
           Câmeras Disponíveis
         </h3>
       </div>
@@ -29,7 +29,7 @@ const TabsWithReactPlayer: React.FC<tabsWithReactPlayerProps> = ({
           alterIDVideos={alterIDVideos}
           activeTab={activeTab}
         />
-        <ReactPlayer url={VideosId} playing={false} pip={true} />
+        <ReactPlayer url={VideosId} playing={false} pip={true} width={600}/>
       </div>
     </div>
   );

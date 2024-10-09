@@ -13,7 +13,7 @@ const Tabs: React.FC<IniciarTabs> = ({ setShow, tabs, alterIDVideos, activeTab }
     <div>
       <div className="hidden sm:block">
         <nav
-          className="isolate flex divide-x divide-gray-200 dark:divide-gray-600 rounded-lg dark:rounded-none shadow dark:shadow-gray-600"
+          className="isolate flex divide-x divide-gray-200 dark:divide-slate-700 rounded-lg dark:rounded-none shadow dark:shadow-gray-600"
           aria-label="Tabs"
         >
           {tabs.map((tab, tabIdx) => (
