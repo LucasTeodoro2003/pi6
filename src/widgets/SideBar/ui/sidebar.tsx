@@ -1,11 +1,11 @@
 import {
   ArrowLeftEndOnRectangleIcon,
   BellAlertIcon,
-  CalendarIcon,
   Cog8ToothIcon,
   HomeIcon,
   IdentificationIcon,
   InboxIcon,
+  VideoCameraIcon,
 } from '@heroicons/react/24/outline';
 import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -23,9 +23,9 @@ interface HomePagePromps {
 
 const navigation: NavigationItem[] = [
   { name: 'Home', link: '/home', icon: HomeIcon },
-  { name: 'Alertas', link: '/alertas', icon: BellAlertIcon },
+  { name: 'Alertas', link: '/alert', icon: BellAlertIcon },
   { name: 'Funcionários', link: '/formulary', icon: IdentificationIcon },
-  { name: 'Calendar', link: '#', icon: CalendarIcon },
+  { name: 'Câmeras', link: '/cam', icon: VideoCameraIcon },
   { name: 'Documents', link: '#', icon: InboxIcon },
   { name: 'Configurações', link: '/config', icon: Cog8ToothIcon },
 ];

@@ -1,13 +1,13 @@
 import React from "react";
-import { ConfigAccount } from "../../configAccount";
+import { Formulary } from "../../formulary/ui/formulary";
 
 interface InicarCamera {}
 
-const BackgroundConfig: React.FC<InicarCamera> = () => {
+const BackgroundCam: React.FC<InicarCamera> = () => {
   return (
-    <div className="flex h-[calc(100vh-98px)] ml-64">
+    <div className="flex h-screen ml-64">
       <div className="bg-white dark:bg-gray-800 w-full h-full ">
-        <ConfigAccount />
+        <Formulary />
         <div className="flex mt-5 mx-5 bg-white dark:bg-gray-800">
           <div className="flex text-justify w-screen"></div>
         </div>
@@ -16,4 +16,4 @@ const BackgroundConfig: React.FC<InicarCamera> = () => {
   );
 };
 
-export { BackgroundConfig };
+export { BackgroundCam };

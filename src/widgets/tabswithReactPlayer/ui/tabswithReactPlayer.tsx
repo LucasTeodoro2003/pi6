@@ -29,7 +29,7 @@ const TabsWithReactPlayer: React.FC<tabsWithReactPlayerProps> = ({
           alterIDVideos={alterIDVideos}
           activeTab={activeTab}
         />
-        <ReactPlayer url={VideosId} playing={false} pip={true} width={600}/>
+        <ReactPlayer url={VideosId} playing={false} pip={true} width={640} />
       </div>
     </div>
   );
